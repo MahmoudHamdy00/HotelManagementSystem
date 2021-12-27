@@ -150,5 +150,12 @@ namespace HotelManagementSystem
             }
             else showError("Can't find a username.", "Invalid Username");
         }
+
+        private void testBtn_Click(object sender, EventArgs e)
+        {
+            usernameTextBox.Text = "ma7moud7amdy";
+            passwordTextBox.Text = "123456";
+            signInBtn.PerformClick();
+        }
     }
 }

@@ -38,15 +38,16 @@
             this.usernameErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.passwordErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.hotelManagmentSystemLabel = new System.Windows.Forms.Label();
+            this.testBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.usernameErrorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // signInBtn
             // 
-            this.signInBtn.Location = new System.Drawing.Point(93, 313);
+            this.signInBtn.Location = new System.Drawing.Point(161, 313);
             this.signInBtn.Name = "signInBtn";
-            this.signInBtn.Size = new System.Drawing.Size(333, 41);
+            this.signInBtn.Size = new System.Drawing.Size(265, 41);
             this.signInBtn.TabIndex = 0;
             this.signInBtn.Text = "Sign In";
             this.signInBtn.UseVisualStyleBackColor = true;
@@ -117,11 +118,22 @@
             this.hotelManagmentSystemLabel.Text = "Hotel Managment System";
             this.hotelManagmentSystemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // testBtn
+            // 
+            this.testBtn.Location = new System.Drawing.Point(93, 313);
+            this.testBtn.Name = "testBtn";
+            this.testBtn.Size = new System.Drawing.Size(62, 41);
+            this.testBtn.TabIndex = 7;
+            this.testBtn.Text = "Test";
+            this.testBtn.UseVisualStyleBackColor = true;
+            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(468, 450);
+            this.Controls.Add(this.testBtn);
             this.Controls.Add(this.hotelManagmentSystemLabel);
             this.Controls.Add(this.forgetPasswordLinkLabel);
             this.Controls.Add(this.passwordLabel);
@@ -150,5 +162,6 @@
         private ErrorProvider usernameErrorProvider;
         private ErrorProvider passwordErrorProvider;
         private Label hotelManagmentSystemLabel;
+        private Button testBtn;
     }
 }
