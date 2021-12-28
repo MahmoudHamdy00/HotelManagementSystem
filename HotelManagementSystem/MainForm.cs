@@ -16,5 +16,16 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult = MessageBox.Show("Do you really want to exit the app...?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult != DialogResult.Yes) e.Cancel = true;
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
