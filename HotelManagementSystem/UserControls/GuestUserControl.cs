@@ -16,7 +16,6 @@ namespace HotelManagementSystem
         public GuestUserControl()
         {
             InitializeComponent();
-            dataGridViewGuestInfo.DataSource = guest.GetGuests();
         }
 
         private void labelGuestDiscripe_Click(object sender, EventArgs e)
@@ -27,6 +26,7 @@ namespace HotelManagementSystem
         private void GuestUserControl_Load(object sender, EventArgs e)
         {
 
+            dataGridViewGuestInfo.DataSource = guest.GetGuests();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

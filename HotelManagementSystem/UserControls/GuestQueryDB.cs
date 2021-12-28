@@ -9,7 +9,13 @@ namespace HotelManagementSystem.UserControls
 {
     internal class GuestQueryDB
     {
-        private MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=hotel");
+        readonly string connectionString;
+        private readonly MySqlConnection conn;
+        public GuestQueryDB()
+        {
+            connectionString = Environment.GetEnvironmentVariable("hotelmanagmentsystemdpConnectionString");
+            conn = new MySqlConnection(connectionString);
+        }
         public bool insertGuest(int GID, string fName, string lName, string Phone, string country, DateTime DateG)
         {
             // conn.Open();
