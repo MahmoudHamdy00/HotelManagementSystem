@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HotelManagementSystem.Database;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,8 +16,7 @@ namespace HotelManagementSystem
     {
         private readonly MySqlConnection connection;
         readonly string connectionString;
-        string _username;
-        bool _isAdmin;
+       
         public LoginForm()
         {
             InitializeComponent();
@@ -24,7 +24,6 @@ namespace HotelManagementSystem
             if (isNullOrEmpty(connectionString))
                 showError("The ConnectionString isn't valid", "Connection string error");
             connection = new MySqlConnection(connectionString);
-            _isAdmin = false;
         }
 
         private void signInBtn_Click(object sender, EventArgs e)
@@ -55,6 +54,12 @@ namespace HotelManagementSystem
                 showError("Wrong username or password.", "Invalid Credentials");
             }
 
+        }
+        void setLoginInfo(string username, string password,bool isAdmin)
+        {
+            LoginInfo._username = username;
+            LoginInfo._password = password;
+            LoginInfo._isAdmin = isAdmin;
         }
         private bool isNullOrEmpty(string text)
         {
@@ -92,6 +97,7 @@ namespace HotelManagementSystem
 
             try
             {
+                bool isAdmin=false;
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand($"select isAdmin from employees where employees.employeeUserName='{username}' and employees.employeePassowrd='{password}';", connection);
                 object ret = cmd.ExecuteScalar();
@@ -99,10 +105,11 @@ namespace HotelManagementSystem
                 {
                     if (Convert.ToBoolean(ret) == true)//is admin=true
                     {
-                        _isAdmin = true;
+                        isAdmin = true;
                     }
-                    _username = username;
                     isOk = true;
+                    setLoginInfo(username,password,isAdmin);
+
                 }
             }
             catch (Exception ex)

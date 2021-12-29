@@ -141,9 +141,12 @@
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.signInBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.usernameErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordErrorProvider)).EndInit();
             this.ResumeLayout(false);
