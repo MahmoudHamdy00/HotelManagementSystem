@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.userTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -47,11 +48,13 @@
             this.mobileNumberTextBox = new System.Windows.Forms.TextBox();
             this.ssnTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.getUsersBtn_deleteUser = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ssnToDeleteTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.getUsersBtn_userDetails = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,6 +67,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,6 +75,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -132,6 +137,7 @@
             this.registerBtn.TabIndex = 14;
             this.registerBtn.Text = "Register";
             this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // label7
             // 
@@ -259,8 +265,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.getUsersBtn_deleteUser);
             this.tabPage2.Controls.Add(this.deleteBtn);
-            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.ssnToDeleteTextBox);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -271,6 +278,16 @@
             this.tabPage2.Text = "Delete User";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // getUsersBtn_deleteUser
+            // 
+            this.getUsersBtn_deleteUser.Location = new System.Drawing.Point(951, 103);
+            this.getUsersBtn_deleteUser.Name = "getUsersBtn_deleteUser";
+            this.getUsersBtn_deleteUser.Size = new System.Drawing.Size(94, 29);
+            this.getUsersBtn_deleteUser.TabIndex = 4;
+            this.getUsersBtn_deleteUser.Text = "Get Users";
+            this.getUsersBtn_deleteUser.UseVisualStyleBackColor = true;
+            this.getUsersBtn_deleteUser.Click += new System.EventHandler(this.getUsersBtn_Click);
+            // 
             // deleteBtn
             // 
             this.deleteBtn.Location = new System.Drawing.Point(658, 53);
@@ -279,14 +296,15 @@
             this.deleteBtn.TabIndex = 3;
             this.deleteBtn.Text = "Delete";
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // textBox1
+            // ssnToDeleteTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(326, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Enter your SSN to delete";
-            this.textBox1.Size = new System.Drawing.Size(326, 27);
-            this.textBox1.TabIndex = 2;
+            this.ssnToDeleteTextBox.Location = new System.Drawing.Point(326, 50);
+            this.ssnToDeleteTextBox.Name = "ssnToDeleteTextBox";
+            this.ssnToDeleteTextBox.PlaceholderText = "Enter your SSN to delete";
+            this.ssnToDeleteTextBox.Size = new System.Drawing.Size(326, 27);
+            this.ssnToDeleteTextBox.TabIndex = 2;
             // 
             // label8
             // 
@@ -312,6 +330,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.getUsersBtn_userDetails);
             this.tabPage3.Controls.Add(this.searchBtn);
             this.tabPage3.Controls.Add(this.textBox2);
             this.tabPage3.Controls.Add(this.label9);
@@ -322,6 +341,16 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Users Details";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // getUsersBtn_userDetails
+            // 
+            this.getUsersBtn_userDetails.Location = new System.Drawing.Point(948, 67);
+            this.getUsersBtn_userDetails.Name = "getUsersBtn_userDetails";
+            this.getUsersBtn_userDetails.Size = new System.Drawing.Size(94, 29);
+            this.getUsersBtn_userDetails.TabIndex = 8;
+            this.getUsersBtn_userDetails.Text = "Get Users";
+            this.getUsersBtn_userDetails.UseVisualStyleBackColor = true;
+            this.getUsersBtn_userDetails.Click += new System.EventHandler(this.getUsersBtn_userDetails_Click);
             // 
             // searchBtn
             // 
@@ -448,6 +477,10 @@
             this.textBox3.Size = new System.Drawing.Size(326, 27);
             this.textBox3.TabIndex = 7;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // SettingsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -466,6 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -494,7 +528,7 @@
         private TabPage tabPage4;
         private ComboBox userTypeComboBox;
         private Button deleteBtn;
-        private TextBox textBox1;
+        private TextBox ssnToDeleteTextBox;
         private Label label8;
         private DataGridView dataGridView1;
         private Button searchBtn;
@@ -508,5 +542,8 @@
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
+        private ErrorProvider errorProvider1;
+        private Button getUsersBtn_deleteUser;
+        private Button getUsersBtn_userDetails;
     }
 }
