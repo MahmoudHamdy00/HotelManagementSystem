@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.userTypeComboBox = new System.Windows.Forms.ComboBox();
             this.registerBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,25 +58,29 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.getUsersBtn_userDetails = new System.Windows.Forms.Button();
             this.searchBtn = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ssn_SearchTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.confirmNewPasswordTextBox = new System.Windows.Forms.TextBox();
             this.changePasswordBtn = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.newPasswordTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.oldPasswordTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,22 +99,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.userTypeComboBox);
-            this.tabPage1.Controls.Add(this.registerBtn);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.nameTextBox);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.genderComboBox);
-            this.tabPage1.Controls.Add(this.passwordTextBox);
-            this.tabPage1.Controls.Add(this.usernameTextBox);
-            this.tabPage1.Controls.Add(this.emailTextBox);
-            this.tabPage1.Controls.Add(this.mobileNumberTextBox);
-            this.tabPage1.Controls.Add(this.ssnTextBox);
+            this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -117,24 +108,58 @@
             this.tabPage1.Text = "Add User";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.userTypeComboBox);
+            this.groupBox2.Controls.Add(this.registerBtn);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.nameTextBox);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.genderComboBox);
+            this.groupBox2.Controls.Add(this.passwordTextBox);
+            this.groupBox2.Controls.Add(this.usernameTextBox);
+            this.groupBox2.Controls.Add(this.emailTextBox);
+            this.groupBox2.Controls.Add(this.mobileNumberTextBox);
+            this.groupBox2.Controls.Add(this.ssnTextBox);
+            this.groupBox2.Location = new System.Drawing.Point(185, 38);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(786, 445);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Register";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(493, 208);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(91, 20);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Acount Type";
+            // 
             // userTypeComboBox
             // 
             this.userTypeComboBox.FormattingEnabled = true;
             this.userTypeComboBox.Items.AddRange(new object[] {
             "Admin",
             "User"});
-            this.userTypeComboBox.Location = new System.Drawing.Point(695, 289);
+            this.userTypeComboBox.Location = new System.Drawing.Point(493, 231);
             this.userTypeComboBox.Name = "userTypeComboBox";
             this.userTypeComboBox.Size = new System.Drawing.Size(278, 28);
-            this.userTypeComboBox.TabIndex = 15;
+            this.userTypeComboBox.TabIndex = 32;
             // 
             // registerBtn
             // 
-            this.registerBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.registerBtn.Location = new System.Drawing.Point(695, 381);
+            this.registerBtn.Location = new System.Drawing.Point(493, 322);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(278, 74);
-            this.registerBtn.TabIndex = 14;
+            this.registerBtn.TabIndex = 31;
             this.registerBtn.Text = "Register";
             this.registerBtn.UseVisualStyleBackColor = true;
             this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
@@ -142,73 +167,72 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(83, 182);
+            this.label7.Location = new System.Drawing.Point(15, 132);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 20);
-            this.label7.TabIndex = 13;
+            this.label7.TabIndex = 30;
             this.label7.Text = "Name";
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Location = new System.Drawing.Point(83, 205);
+            this.nameTextBox.Location = new System.Drawing.Point(15, 155);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.PlaceholderText = "Enter your full name";
             this.nameTextBox.Size = new System.Drawing.Size(278, 27);
-            this.nameTextBox.TabIndex = 12;
-            this.nameTextBox.UseSystemPasswordChar = true;
+            this.nameTextBox.TabIndex = 29;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(695, 191);
+            this.label6.Location = new System.Drawing.Point(493, 132);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 20);
-            this.label6.TabIndex = 11;
+            this.label6.TabIndex = 28;
             this.label6.Text = "Password";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(695, 107);
+            this.label5.Location = new System.Drawing.Point(493, 48);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
-            this.label5.TabIndex = 10;
+            this.label5.TabIndex = 27;
             this.label5.Text = "Username";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 405);
+            this.label4.Location = new System.Drawing.Point(15, 346);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
-            this.label4.TabIndex = 9;
+            this.label4.TabIndex = 26;
             this.label4.Text = "Email";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(83, 333);
+            this.label3.Location = new System.Drawing.Point(15, 279);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
-            this.label3.TabIndex = 8;
+            this.label3.TabIndex = 25;
             this.label3.Text = "Gender";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 256);
+            this.label2.Location = new System.Drawing.Point(15, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 20);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 24;
             this.label2.Text = "Mobile Number";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 107);
+            this.label1.Location = new System.Drawing.Point(15, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 20);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 23;
             this.label1.Text = "SSN";
             // 
             // genderComboBox
@@ -217,51 +241,51 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(83, 356);
+            this.genderComboBox.Location = new System.Drawing.Point(15, 302);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(278, 28);
-            this.genderComboBox.TabIndex = 5;
+            this.genderComboBox.TabIndex = 22;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(695, 214);
+            this.passwordTextBox.Location = new System.Drawing.Point(493, 155);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PlaceholderText = "Enter your password";
             this.passwordTextBox.Size = new System.Drawing.Size(278, 27);
-            this.passwordTextBox.TabIndex = 4;
+            this.passwordTextBox.TabIndex = 21;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(695, 130);
+            this.usernameTextBox.Location = new System.Drawing.Point(493, 71);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.PlaceholderText = "Enter your username";
             this.usernameTextBox.Size = new System.Drawing.Size(278, 27);
-            this.usernameTextBox.TabIndex = 3;
+            this.usernameTextBox.TabIndex = 20;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(83, 428);
+            this.emailTextBox.Location = new System.Drawing.Point(15, 369);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.PlaceholderText = "Enter your email address";
             this.emailTextBox.Size = new System.Drawing.Size(278, 27);
-            this.emailTextBox.TabIndex = 2;
+            this.emailTextBox.TabIndex = 19;
             // 
             // mobileNumberTextBox
             // 
-            this.mobileNumberTextBox.Location = new System.Drawing.Point(83, 290);
+            this.mobileNumberTextBox.Location = new System.Drawing.Point(15, 231);
             this.mobileNumberTextBox.Name = "mobileNumberTextBox";
             this.mobileNumberTextBox.PlaceholderText = "Enter your phone number";
             this.mobileNumberTextBox.Size = new System.Drawing.Size(278, 27);
-            this.mobileNumberTextBox.TabIndex = 1;
+            this.mobileNumberTextBox.TabIndex = 18;
             // 
             // ssnTextBox
             // 
-            this.ssnTextBox.Location = new System.Drawing.Point(83, 130);
+            this.ssnTextBox.Location = new System.Drawing.Point(15, 71);
             this.ssnTextBox.Name = "ssnTextBox";
             this.ssnTextBox.PlaceholderText = "Enter your SSN";
             this.ssnTextBox.Size = new System.Drawing.Size(278, 27);
-            this.ssnTextBox.TabIndex = 0;
+            this.ssnTextBox.TabIndex = 17;
             // 
             // tabPage2
             // 
@@ -280,9 +304,10 @@
             // 
             // getUsersBtn_deleteUser
             // 
-            this.getUsersBtn_deleteUser.Location = new System.Drawing.Point(951, 103);
+            this.getUsersBtn_deleteUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.getUsersBtn_deleteUser.Location = new System.Drawing.Point(940, 7);
             this.getUsersBtn_deleteUser.Name = "getUsersBtn_deleteUser";
-            this.getUsersBtn_deleteUser.Size = new System.Drawing.Size(94, 29);
+            this.getUsersBtn_deleteUser.Size = new System.Drawing.Size(123, 42);
             this.getUsersBtn_deleteUser.TabIndex = 4;
             this.getUsersBtn_deleteUser.Text = "Get Users";
             this.getUsersBtn_deleteUser.UseVisualStyleBackColor = true;
@@ -290,7 +315,8 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(658, 53);
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deleteBtn.Location = new System.Drawing.Point(660, 7);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(94, 29);
             this.deleteBtn.TabIndex = 3;
@@ -300,7 +326,8 @@
             // 
             // ssnToDeleteTextBox
             // 
-            this.ssnToDeleteTextBox.Location = new System.Drawing.Point(326, 50);
+            this.ssnToDeleteTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnToDeleteTextBox.Location = new System.Drawing.Point(328, 9);
             this.ssnToDeleteTextBox.Name = "ssnToDeleteTextBox";
             this.ssnToDeleteTextBox.PlaceholderText = "Enter your SSN to delete";
             this.ssnToDeleteTextBox.Size = new System.Drawing.Size(326, 27);
@@ -308,8 +335,9 @@
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(284, 53);
+            this.label8.Location = new System.Drawing.Point(286, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 20);
             this.label8.TabIndex = 1;
@@ -321,18 +349,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 147);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1063, 385);
+            this.dataGridView1.Size = new System.Drawing.Size(1063, 477);
             this.dataGridView1.TabIndex = 0;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.getUsersBtn_userDetails);
             this.tabPage3.Controls.Add(this.searchBtn);
-            this.tabPage3.Controls.Add(this.textBox2);
+            this.tabPage3.Controls.Add(this.ssn_SearchTextBox);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
@@ -344,38 +372,40 @@
             // 
             // getUsersBtn_userDetails
             // 
-            this.getUsersBtn_userDetails.Location = new System.Drawing.Point(948, 67);
+            this.getUsersBtn_userDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.getUsersBtn_userDetails.Location = new System.Drawing.Point(940, 7);
             this.getUsersBtn_userDetails.Name = "getUsersBtn_userDetails";
-            this.getUsersBtn_userDetails.Size = new System.Drawing.Size(94, 29);
+            this.getUsersBtn_userDetails.Size = new System.Drawing.Size(123, 42);
             this.getUsersBtn_userDetails.TabIndex = 8;
             this.getUsersBtn_userDetails.Text = "Get Users";
             this.getUsersBtn_userDetails.UseVisualStyleBackColor = true;
-            this.getUsersBtn_userDetails.Click += new System.EventHandler(this.getUsersBtn_userDetails_Click);
+            this.getUsersBtn_userDetails.Click += new System.EventHandler(this.getUsersBtn_Click);
             // 
             // searchBtn
             // 
-            this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBtn.Location = new System.Drawing.Point(690, 44);
+            this.searchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.searchBtn.Location = new System.Drawing.Point(660, 7);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(94, 29);
             this.searchBtn.TabIndex = 7;
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
-            // textBox2
+            // ssn_SearchTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(325, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PlaceholderText = "Enter an SSN to search For";
-            this.textBox2.Size = new System.Drawing.Size(359, 27);
-            this.textBox2.TabIndex = 6;
+            this.ssn_SearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssn_SearchTextBox.Location = new System.Drawing.Point(328, 9);
+            this.ssn_SearchTextBox.Name = "ssn_SearchTextBox";
+            this.ssn_SearchTextBox.PlaceholderText = "Enter an SSN to search For";
+            this.ssn_SearchTextBox.Size = new System.Drawing.Size(326, 27);
+            this.ssn_SearchTextBox.TabIndex = 6;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(283, 44);
+            this.label9.Location = new System.Drawing.Point(286, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(36, 20);
             this.label9.TabIndex = 5;
@@ -387,22 +417,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 102);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 55);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(1069, 433);
+            this.dataGridView2.Size = new System.Drawing.Size(1069, 480);
             this.dataGridView2.TabIndex = 4;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.changePasswordBtn);
-            this.tabPage4.Controls.Add(this.label12);
-            this.tabPage4.Controls.Add(this.label11);
-            this.tabPage4.Controls.Add(this.label10);
-            this.tabPage4.Controls.Add(this.textBox5);
-            this.tabPage4.Controls.Add(this.textBox4);
-            this.tabPage4.Controls.Add(this.textBox3);
+            this.tabPage4.Controls.Add(this.groupBox1);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1069, 535);
@@ -410,72 +434,99 @@
             this.tabPage4.Text = "Change Password";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.confirmNewPasswordTextBox);
+            this.groupBox1.Controls.Add(this.changePasswordBtn);
+            this.groupBox1.Controls.Add(this.usernameLabel);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.newPasswordTextBox);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.oldPasswordTextBox);
+            this.groupBox1.Location = new System.Drawing.Point(239, 101);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(567, 278);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Change Password";
+            // 
+            // confirmNewPasswordTextBox
+            // 
+            this.confirmNewPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.confirmNewPasswordTextBox.Location = new System.Drawing.Point(34, 228);
+            this.confirmNewPasswordTextBox.Name = "confirmNewPasswordTextBox";
+            this.confirmNewPasswordTextBox.PlaceholderText = "Confirm your  new password";
+            this.confirmNewPasswordTextBox.Size = new System.Drawing.Size(326, 27);
+            this.confirmNewPasswordTextBox.TabIndex = 9;
+            // 
             // changePasswordBtn
             // 
             this.changePasswordBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.changePasswordBtn.Location = new System.Drawing.Point(691, 290);
+            this.changePasswordBtn.Location = new System.Drawing.Point(384, 203);
             this.changePasswordBtn.Name = "changePasswordBtn";
             this.changePasswordBtn.Size = new System.Drawing.Size(177, 69);
             this.changePasswordBtn.TabIndex = 13;
             this.changePasswordBtn.Text = "Change";
             this.changePasswordBtn.UseVisualStyleBackColor = true;
+            this.changePasswordBtn.Click += new System.EventHandler(this.changePasswordBtn_Click);
             // 
-            // label12
+            // usernameLabel
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(236, 123);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(98, 20);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Old Password";
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Location = new System.Drawing.Point(183, 37);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(147, 20);
+            this.usernameLabel.TabIndex = 14;
+            this.usernameLabel.Text = "Your Loged in with  ?";
             // 
             // label11
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(236, 309);
+            this.label11.Location = new System.Drawing.Point(34, 205);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(160, 20);
             this.label11.TabIndex = 11;
             this.label11.Text = "Confirm new password";
             // 
+            // newPasswordTextBox
+            // 
+            this.newPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.newPasswordTextBox.Location = new System.Drawing.Point(34, 171);
+            this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.PlaceholderText = "Enter the new password again";
+            this.newPasswordTextBox.Size = new System.Drawing.Size(326, 27);
+            this.newPasswordTextBox.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(34, 95);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 20);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Old Password";
+            // 
             // label10
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(236, 205);
+            this.label10.Location = new System.Drawing.Point(34, 148);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 20);
             this.label10.TabIndex = 10;
             this.label10.Text = "New Password";
             // 
-            // textBox5
+            // oldPasswordTextBox
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(236, 332);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.PlaceholderText = "Enter an SSN to search For";
-            this.textBox5.Size = new System.Drawing.Size(326, 27);
-            this.textBox5.TabIndex = 9;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(236, 228);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PlaceholderText = "Enter the new password again";
-            this.textBox4.Size = new System.Drawing.Size(326, 27);
-            this.textBox4.TabIndex = 8;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(236, 146);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PlaceholderText = "Enter your old password";
-            this.textBox3.Size = new System.Drawing.Size(326, 27);
-            this.textBox3.TabIndex = 7;
+            this.oldPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.oldPasswordTextBox.Location = new System.Drawing.Point(34, 118);
+            this.oldPasswordTextBox.Name = "oldPasswordTextBox";
+            this.oldPasswordTextBox.PlaceholderText = "Enter your old password";
+            this.oldPasswordTextBox.Size = new System.Drawing.Size(326, 27);
+            this.oldPasswordTextBox.TabIndex = 7;
             // 
             // errorProvider1
             // 
@@ -488,9 +539,11 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "SettingsUserControl";
             this.Size = new System.Drawing.Size(1077, 568);
+            this.Load += new System.EventHandler(this.SettingsUserControl_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -498,7 +551,8 @@
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -508,6 +562,32 @@
 
         private TabControl tabControl1;
         private TabPage tabPage1;
+        private TabPage tabPage2;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private Button deleteBtn;
+        private TextBox ssnToDeleteTextBox;
+        private Label label8;
+        private DataGridView dataGridView1;
+        private Button searchBtn;
+        private TextBox ssn_SearchTextBox;
+        private Label label9;
+        private DataGridView dataGridView2;
+        private Button changePasswordBtn;
+        private Label label12;
+        private Label label11;
+        private Label label10;
+        private TextBox confirmNewPasswordTextBox;
+        private TextBox newPasswordTextBox;
+        private TextBox oldPasswordTextBox;
+        private ErrorProvider errorProvider1;
+        private Button getUsersBtn_deleteUser;
+        private Button getUsersBtn_userDetails;
+        private Label usernameLabel;
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private Label label13;
+        private ComboBox userTypeComboBox;
         private Button registerBtn;
         private Label label7;
         private TextBox nameTextBox;
@@ -523,27 +603,5 @@
         private TextBox emailTextBox;
         private TextBox mobileNumberTextBox;
         private TextBox ssnTextBox;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
-        private TabPage tabPage4;
-        private ComboBox userTypeComboBox;
-        private Button deleteBtn;
-        private TextBox ssnToDeleteTextBox;
-        private Label label8;
-        private DataGridView dataGridView1;
-        private Button searchBtn;
-        private TextBox textBox2;
-        private Label label9;
-        private DataGridView dataGridView2;
-        private Button changePasswordBtn;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private ErrorProvider errorProvider1;
-        private Button getUsersBtn_deleteUser;
-        private Button getUsersBtn_userDetails;
     }
 }

@@ -92,6 +92,54 @@ namespace HotelManagementSystem.Database
             }
             return true;
         }
+        public static bool changePassword(TextBox oldPasswordTextBox, TextBox newPasswordTextBox, TextBox confirmNewPasswordTextBox, ErrorProvider errorProvider)
+        {
+            errorProvider.Clear();
+            oldPasswordTextBox.Text = oldPasswordTextBox.Text.Trim();
+            newPasswordTextBox.Text = newPasswordTextBox.Text.Trim();
+            confirmNewPasswordTextBox.Text = confirmNewPasswordTextBox.Text.Trim();
+
+            bool isOk = true;
+            if (isNullOrEmpty(oldPasswordTextBox.Text))
+            {
+                isOk = false;
+                setError(errorProvider, oldPasswordTextBox, "You must enter your SSn");
+            }
+            if (isNullOrEmpty(newPasswordTextBox.Text))
+            {
+                isOk = false;
+                setError(errorProvider, newPasswordTextBox, "You must enter your name");
+
+            }
+            if (isNullOrEmpty(confirmNewPasswordTextBox.Text))
+            {
+                isOk = false;
+                setError(errorProvider, confirmNewPasswordTextBox, "You must enter your mobile number");
+            }
+
+            if (isOk != true) return false;
+            try
+            {
+                if (newPasswordTextBox.Text != confirmNewPasswordTextBox.Text) throw new Exception("The password and confirmation didn't match");
+                connection.Open();
+                string insertQuery = $"UPDATE employees SET employeePassowrd='{newPasswordTextBox.Text}' WHERE employeeUserName='{LoginInfo._username}' and employeePassowrd='{oldPasswordTextBox.Text}';";
+                MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                    MessageBox.Show("Successfully Changed");
+                else
+                    throw new Exception("Not Changed");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
         public static bool deleteUser(TextBox ssn, ErrorProvider errorProvider)
         {
             errorProvider.Clear();
@@ -141,6 +189,47 @@ namespace HotelManagementSystem.Database
                     dataGridView.DataSource = dataTable;
                 }
                 else throw new Exception("NO Result");
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
+        public static bool showUserWithSSN(TextBox ssn, DataGridView dataGridView, ErrorProvider errorProvider)
+        {
+            errorProvider.Clear();
+            ssn.Text = ssn.Text.Trim();
+            if (isNullOrEmpty(ssn.Text))
+            {
+                setError(errorProvider, ssn, "You must enter an SSN");
+                return false;
+            }
+
+            try
+            {
+                connection.Open();
+
+                string query = $"SELECT * FROM employees WHERE ssn='{ssn.Text}';";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null && reader.HasRows)
+                {
+
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    dataGridView.DataSource = dataTable;
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                    MessageBox.Show("There is no user with this ssn.","NO User");
+                }
 
             }
             catch (Exception e)
