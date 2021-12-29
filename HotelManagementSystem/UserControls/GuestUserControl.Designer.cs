@@ -74,7 +74,6 @@
             this.labelGuestDiscripe.Size = new System.Drawing.Size(585, 106);
             this.labelGuestDiscripe.TabIndex = 0;
             this.labelGuestDiscripe.Text = "Manage Guest";
-            this.labelGuestDiscripe.Click += new System.EventHandler(this.labelGuestDiscripe_Click);
             // 
             // labelID
             // 
