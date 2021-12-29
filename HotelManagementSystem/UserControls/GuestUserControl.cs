@@ -18,11 +18,7 @@ namespace HotelManagementSystem
             InitializeComponent();
         }
 
-        private void labelGuestDiscripe_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void GuestUserControl_Load(object sender, EventArgs e)
         {
 
