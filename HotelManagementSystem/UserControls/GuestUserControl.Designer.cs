@@ -49,6 +49,10 @@
             this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.comboBoxGender = new System.Windows.Forms.ComboBox();
+            this.labelGender = new System.Windows.Forms.Label();
+            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.labelAddress = new System.Windows.Forms.Label();
             this.panelGuestTitel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuestInfo)).BeginInit();
             this.SuspendLayout();
@@ -59,19 +63,18 @@
             this.panelGuestTitel.Controls.Add(this.labelGuestDiscripe);
             this.panelGuestTitel.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelGuestTitel.Location = new System.Drawing.Point(0, 0);
-            this.panelGuestTitel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelGuestTitel.Name = "panelGuestTitel";
-            this.panelGuestTitel.Size = new System.Drawing.Size(1069, 165);
+            this.panelGuestTitel.Size = new System.Drawing.Size(1200, 124);
             this.panelGuestTitel.TabIndex = 0;
             // 
             // labelGuestDiscripe
             // 
             this.labelGuestDiscripe.AutoSize = true;
             this.labelGuestDiscripe.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelGuestDiscripe.Location = new System.Drawing.Point(271, 25);
+            this.labelGuestDiscripe.Location = new System.Drawing.Point(237, 19);
             this.labelGuestDiscripe.Name = "labelGuestDiscripe";
             this.labelGuestDiscripe.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelGuestDiscripe.Size = new System.Drawing.Size(585, 106);
+            this.labelGuestDiscripe.Size = new System.Drawing.Size(471, 86);
             this.labelGuestDiscripe.TabIndex = 0;
             this.labelGuestDiscripe.Text = "Manage Guest";
             // 
@@ -80,20 +83,19 @@
             this.labelID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelID.Location = new System.Drawing.Point(129, 185);
+            this.labelID.Location = new System.Drawing.Point(84, 153);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(56, 37);
+            this.labelID.Size = new System.Drawing.Size(62, 30);
             this.labelID.TabIndex = 1;
-            this.labelID.Text = "ID :";
+            this.labelID.Text = "SSN :";
             // 
             // textBoxID
             // 
             this.textBoxID.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxID.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxID.Location = new System.Drawing.Point(191, 196);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxID.Location = new System.Drawing.Point(152, 154);
             this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(217, 39);
+            this.textBoxID.Size = new System.Drawing.Size(190, 33);
             this.textBoxID.TabIndex = 2;
             this.textBoxID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxID_KeyPress);
             // 
@@ -101,10 +103,9 @@
             // 
             this.textBoxFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxFirstName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxFirstName.Location = new System.Drawing.Point(191, 259);
-            this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxFirstName.Location = new System.Drawing.Point(152, 201);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(217, 39);
+            this.textBoxFirstName.Size = new System.Drawing.Size(190, 33);
             this.textBoxFirstName.TabIndex = 4;
             // 
             // labelFirstName
@@ -112,9 +113,9 @@
             this.labelFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelFirstName.Location = new System.Drawing.Point(39, 249);
+            this.labelFirstName.Location = new System.Drawing.Point(19, 194);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(157, 37);
+            this.labelFirstName.Size = new System.Drawing.Size(124, 30);
             this.labelFirstName.TabIndex = 3;
             this.labelFirstName.Text = "First Name :";
             // 
@@ -122,10 +123,9 @@
             // 
             this.textBoxLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxLastName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxLastName.Location = new System.Drawing.Point(191, 317);
-            this.textBoxLastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxLastName.Location = new System.Drawing.Point(152, 245);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(217, 39);
+            this.textBoxLastName.Size = new System.Drawing.Size(190, 33);
             this.textBoxLastName.TabIndex = 6;
             // 
             // labelLastName
@@ -133,9 +133,9 @@
             this.labelLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelLastName.AutoSize = true;
             this.labelLastName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLastName.Location = new System.Drawing.Point(40, 308);
+            this.labelLastName.Location = new System.Drawing.Point(20, 238);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(155, 37);
+            this.labelLastName.Size = new System.Drawing.Size(123, 30);
             this.labelLastName.TabIndex = 5;
             this.labelLastName.Text = "Last Name :";
             // 
@@ -143,10 +143,9 @@
             // 
             this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxPhone.Location = new System.Drawing.Point(191, 371);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxPhone.Location = new System.Drawing.Point(152, 285);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(217, 39);
+            this.textBoxPhone.Size = new System.Drawing.Size(190, 33);
             this.textBoxPhone.TabIndex = 8;
             this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
@@ -155,9 +154,9 @@
             this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPhone.Location = new System.Drawing.Point(86, 359);
+            this.labelPhone.Location = new System.Drawing.Point(60, 276);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(105, 37);
+            this.labelPhone.Size = new System.Drawing.Size(83, 30);
             this.labelPhone.TabIndex = 7;
             this.labelPhone.Text = "Phone :";
             this.labelPhone.Click += new System.EventHandler(this.labelPhone_Click);
@@ -166,10 +165,9 @@
             // 
             this.textBoxCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxCountry.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxCountry.Location = new System.Drawing.Point(191, 432);
-            this.textBoxCountry.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxCountry.Location = new System.Drawing.Point(152, 331);
             this.textBoxCountry.Name = "textBoxCountry";
-            this.textBoxCountry.Size = new System.Drawing.Size(217, 39);
+            this.textBoxCountry.Size = new System.Drawing.Size(190, 33);
             this.textBoxCountry.TabIndex = 10;
             // 
             // labelCountry
@@ -177,9 +175,9 @@
             this.labelCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelCountry.AutoSize = true;
             this.labelCountry.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCountry.Location = new System.Drawing.Point(63, 423);
+            this.labelCountry.Location = new System.Drawing.Point(40, 324);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(131, 37);
+            this.labelCountry.Size = new System.Drawing.Size(103, 30);
             this.labelCountry.TabIndex = 9;
             this.labelCountry.Text = "Country  :";
             // 
@@ -188,9 +186,9 @@
             this.labelBOD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelBOD.AutoSize = true;
             this.labelBOD.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelBOD.Location = new System.Drawing.Point(23, 480);
+            this.labelBOD.Location = new System.Drawing.Point(5, 405);
             this.labelBOD.Name = "labelBOD";
-            this.labelBOD.Size = new System.Drawing.Size(173, 37);
+            this.labelBOD.Size = new System.Drawing.Size(138, 30);
             this.labelBOD.TabIndex = 11;
             this.labelBOD.Text = "Birth Of Day :";
             // 
@@ -200,10 +198,9 @@
             this.dateTimePickerBirthDay.CalendarFont = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerBirthDay.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePickerBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerBirthDay.Location = new System.Drawing.Point(191, 480);
-            this.dateTimePickerBirthDay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePickerBirthDay.Location = new System.Drawing.Point(152, 405);
             this.dateTimePickerBirthDay.Name = "dateTimePickerBirthDay";
-            this.dateTimePickerBirthDay.Size = new System.Drawing.Size(217, 39);
+            this.dateTimePickerBirthDay.Size = new System.Drawing.Size(190, 33);
             this.dateTimePickerBirthDay.TabIndex = 12;
             // 
             // dataGridViewGuestInfo
@@ -216,24 +213,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewGuestInfo.BackgroundColor = System.Drawing.Color.BurlyWood;
             this.dataGridViewGuestInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGuestInfo.Location = new System.Drawing.Point(475, 223);
-            this.dataGridViewGuestInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewGuestInfo.Location = new System.Drawing.Point(416, 167);
             this.dataGridViewGuestInfo.Name = "dataGridViewGuestInfo";
             this.dataGridViewGuestInfo.ReadOnly = true;
             this.dataGridViewGuestInfo.RowHeadersWidth = 51;
             this.dataGridViewGuestInfo.RowTemplate.Height = 25;
-            this.dataGridViewGuestInfo.Size = new System.Drawing.Size(590, 446);
+            this.dataGridViewGuestInfo.Size = new System.Drawing.Size(755, 529);
             this.dataGridViewGuestInfo.TabIndex = 13;
             this.dataGridViewGuestInfo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGuestInfo_CellClick);
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxSearch.Location = new System.Drawing.Point(525, 175);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxSearch.Location = new System.Drawing.Point(620, 131);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(153, 39);
+            this.textBoxSearch.Size = new System.Drawing.Size(272, 33);
             this.textBoxSearch.TabIndex = 14;
             this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
             // 
@@ -242,10 +238,9 @@
             this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAdd.BackColor = System.Drawing.Color.Chartreuse;
             this.buttonAdd.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonAdd.Location = new System.Drawing.Point(23, 535);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAdd.Location = new System.Drawing.Point(20, 538);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(126, 55);
+            this.buttonAdd.Size = new System.Drawing.Size(110, 41);
             this.buttonAdd.TabIndex = 15;
             this.buttonAdd.Text = "Add";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -256,10 +251,9 @@
             this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonDelete.BackColor = System.Drawing.Color.Brown;
             this.buttonDelete.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonDelete.Location = new System.Drawing.Point(174, 532);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonDelete.Location = new System.Drawing.Point(152, 536);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(141, 57);
+            this.buttonDelete.Size = new System.Drawing.Size(123, 43);
             this.buttonDelete.TabIndex = 16;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
@@ -270,10 +264,9 @@
             this.buttonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonEdit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.buttonEdit.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonEdit.Location = new System.Drawing.Point(331, 535);
-            this.buttonEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonEdit.Location = new System.Drawing.Point(290, 538);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(138, 55);
+            this.buttonEdit.Size = new System.Drawing.Size(121, 41);
             this.buttonEdit.TabIndex = 17;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = false;
@@ -282,10 +275,9 @@
             // buttonSearch
             // 
             this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Location = new System.Drawing.Point(723, 172);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSearch.Location = new System.Drawing.Point(928, 129);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(115, 43);
+            this.buttonSearch.Size = new System.Drawing.Size(144, 32);
             this.buttonSearch.TabIndex = 18;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -296,20 +288,69 @@
             this.buttonReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonReset.BackColor = System.Drawing.Color.Yellow;
             this.buttonReset.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonReset.Location = new System.Drawing.Point(101, 597);
-            this.buttonReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonReset.Location = new System.Drawing.Point(88, 585);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(214, 48);
+            this.buttonReset.Size = new System.Drawing.Size(187, 36);
             this.buttonReset.TabIndex = 19;
             this.buttonReset.Text = "Clear Field";
             this.buttonReset.UseVisualStyleBackColor = false;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
+            // comboBoxGender
+            // 
+            this.comboBoxGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxGender.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxGender.FormattingEnabled = true;
+            this.comboBoxGender.Items.AddRange(new object[] {
+            "Male ",
+            "Female"});
+            this.comboBoxGender.Location = new System.Drawing.Point(152, 444);
+            this.comboBoxGender.Name = "comboBoxGender";
+            this.comboBoxGender.Size = new System.Drawing.Size(190, 33);
+            this.comboBoxGender.TabIndex = 20;
+            // 
+            // labelGender
+            // 
+            this.labelGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelGender.AutoSize = true;
+            this.labelGender.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelGender.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelGender.Location = new System.Drawing.Point(52, 444);
+            this.labelGender.Name = "labelGender";
+            this.labelGender.Size = new System.Drawing.Size(91, 30);
+            this.labelGender.TabIndex = 21;
+            this.labelGender.Text = "Gender :";
+            // 
+            // textBoxAddress
+            // 
+            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBoxAddress.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxAddress.Location = new System.Drawing.Point(152, 370);
+            this.textBoxAddress.Name = "textBoxAddress";
+            this.textBoxAddress.Size = new System.Drawing.Size(190, 33);
+            this.textBoxAddress.TabIndex = 23;
+            // 
+            // labelAddress
+            // 
+            this.labelAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelAddress.Location = new System.Drawing.Point(40, 363);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(98, 30);
+            this.labelAddress.TabIndex = 22;
+            this.labelAddress.Text = "Address :";
+            // 
             // GuestUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Yellow;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.textBoxAddress);
+            this.Controls.Add(this.labelAddress);
+            this.Controls.Add(this.labelGender);
+            this.Controls.Add(this.comboBoxGender);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.buttonEdit);
@@ -330,9 +371,8 @@
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.panelGuestTitel);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "GuestUserControl";
-            this.Size = new System.Drawing.Size(1069, 673);
+            this.Size = new System.Drawing.Size(1200, 700);
             this.Load += new System.EventHandler(this.GuestUserControl_Load);
             this.panelGuestTitel.ResumeLayout(false);
             this.panelGuestTitel.PerformLayout();
@@ -365,5 +405,9 @@
         private Button buttonEdit;
         private Button buttonSearch;
         private Button buttonReset;
+        private ComboBox comboBoxGender;
+        private Label labelGender;
+        private TextBox textBoxAddress;
+        private Label labelAddress;
     }
 }
