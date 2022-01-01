@@ -16,16 +16,19 @@ namespace HotelManagementSystem.Database
         static string _username;
         static bool _isAdmin = false;
 
-        public static bool registerNewUser(TextBox ssn, TextBox name, TextBox mobileNumber, ComboBox gender, TextBox email, TextBox username, TextBox password, ComboBox userTypeComboBox, ErrorProvider errorProvider)
+        public static bool registerNewUser(TextBox ssn, TextBox firstName, TextBox lastName, TextBox address, ComboBox gender, TextBox mobileNumber, DateTimePicker birthOfDate, TextBox email, TextBox username, TextBox password, ComboBox userTypeComboBox, ErrorProvider errorProvider)
         {
             errorProvider.Clear();
             ssn.Text = ssn.Text.Trim();
-            name.Text = name.Text.Trim();
+            firstName.Text = firstName.Text.Trim();
+            lastName.Text = lastName.Text.Trim();
+            address.Text = address.Text.Trim();
             mobileNumber.Text = mobileNumber.Text.Trim();
             gender.Text = gender.Text.Trim();
             email.Text = email.Text.Trim();
             username.Text = username.Text.Trim();
             password.Text = password.Text.Trim();
+            int age = Math.Abs((birthOfDate.Value - DateTime.Now).Days / 30 / 12);
             bool isAdmin = false;
             bool isOk = true;
             if (isNullOrEmpty(ssn.Text))
@@ -33,11 +36,22 @@ namespace HotelManagementSystem.Database
                 isOk = false;
                 setError(errorProvider, ssn, "You must enter your SSn");
             }
-            if (isNullOrEmpty(name.Text))
+            if (isNullOrEmpty(firstName.Text))
             {
                 isOk = false;
-                setError(errorProvider, name, "You must enter your name");
+                setError(errorProvider, firstName, "You must enter your first name");
 
+            }
+            if (isNullOrEmpty(lastName.Text))
+            {
+                isOk = false;
+                setError(errorProvider, lastName, "You must enter your last name");
+
+            }
+            if (isNullOrEmpty(address.Text))
+            {
+                isOk = false;
+                setError(errorProvider, address, "You must enter your address");
             }
             if (isNullOrEmpty(mobileNumber.Text))
             {
@@ -69,12 +83,18 @@ namespace HotelManagementSystem.Database
                 isOk = false;
                 setError(errorProvider, userTypeComboBox, "You must enter a type");
             }
+
+            if (age < 18)
+            {
+                isOk = false;
+                setError(errorProvider, birthOfDate, $"You are to young baby,{age} years.\nYou must be older than 18 years.");
+            }
             if (isOk != true) return false;
             if (userTypeComboBox.Text == "Admin") isAdmin = true;
             try
             {
                 connection.Open();
-                string insertQuery = $"INSERT INTO employees value('{ssn.Text}','{name.Text}','{mobileNumber.Text}','{gender.Text}','{email.Text}','{username.Text}','{password.Text}',{isAdmin});";
+                string insertQuery = $"insert into users(`SSN`, `firstName` ,`lastName`,  `address`, `gender` , `mobileNumber` ,`birthOfDate` , `email` , `username` ,  `password` , `isAdmin`) values ('{ssn.Text}','{firstName.Text}','{lastName.Text}','{address.Text}','{gender.Text}','{mobileNumber.Text}','{birthOfDate.Value.Date.ToString("yyyy-MM-dd")}','{email.Text}','{username.Text}','{password.Text}',{isAdmin});";
                 MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
@@ -122,7 +142,7 @@ namespace HotelManagementSystem.Database
             {
                 if (newPasswordTextBox.Text != confirmNewPasswordTextBox.Text) throw new Exception("The password and confirmation didn't match");
                 connection.Open();
-                string insertQuery = $"UPDATE employees SET employeePassowrd='{newPasswordTextBox.Text}' WHERE employeeUserName='{LoginInfo._username}' and employeePassowrd='{oldPasswordTextBox.Text}';";
+                string insertQuery = $"UPDATE users SET password='{newPasswordTextBox.Text}' WHERE username='{LoginInfo._username}' and password='{oldPasswordTextBox.Text}';";
                 MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
@@ -155,7 +175,7 @@ namespace HotelManagementSystem.Database
             try
             {
                 connection.Open();
-                string insertQuery = $"DELETE FROM employees WHERE employees.ssn='{ssn.Text}';";
+                string insertQuery = $"DELETE FROM users WHERE employees.ssn='{ssn.Text}';";
                 MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
@@ -178,7 +198,7 @@ namespace HotelManagementSystem.Database
             try
             {
                 connection.Open();
-                string insertQuery = $"SELECT * FROM employees;";
+                string insertQuery = $"SELECT * FROM users;";
                 MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader != null && reader.HasRows)
@@ -215,7 +235,7 @@ namespace HotelManagementSystem.Database
             {
                 connection.Open();
 
-                string query = $"SELECT * FROM employees WHERE ssn='{ssn.Text}';";
+                string query = $"SELECT * FROM users WHERE ssn='{ssn.Text}';";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 if (reader != null && reader.HasRows)
@@ -228,7 +248,7 @@ namespace HotelManagementSystem.Database
                 else
                 {
                     dataGridView.DataSource = null;
-                    MessageBox.Show("There is no user with this ssn.","NO User");
+                    MessageBox.Show("There is no user with this ssn.", "NO User");
                 }
 
             }
