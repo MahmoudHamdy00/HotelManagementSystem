@@ -20,7 +20,7 @@ namespace HotelManagementSystem.UserControls
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            HotelDbContext.registerNewUser(ssnTextBox, nameTextBox, mobileNumberTextBox, genderComboBox, emailTextBox, usernameTextBox, passwordTextBox, userTypeComboBox, errorProvider1);
+            HotelDbContext.registerNewUser(ssnTextBox, firstNameTextBox,lastNameTextBox,addressTextBox,genderComboBox, mobileNumberTextBox,birthOfDateDateTimePicker, emailTextBox, usernameTextBox, passwordTextBox, userTypeComboBox, errorProvider1);
             updateGridView();
         }
 
@@ -66,7 +66,7 @@ namespace HotelManagementSystem.UserControls
             HotelDbContext.showUserWithSSN(ssn_SearchTextBox, dataGridView2, errorProvider1);
         }
 
-     
+
         //     MessageBox.Show("username " + LoginInfo._username + "\n" + "password " + LoginInfo._password + "\n" + "isAdmin " + LoginInfo._isAdmin + "\n");
 
     }
