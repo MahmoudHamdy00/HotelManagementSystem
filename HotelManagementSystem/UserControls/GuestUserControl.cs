@@ -39,7 +39,6 @@ namespace HotelManagementSystem
             try
             {
                 idGuist = textBoxID.Text;
-                //Phh = Convert.ToInt64(textBoxPhone.Text);
                 string fname = textBoxFirstName.Text;
                 string lname = textBoxLastName.Text;
                 string phone = textBoxPhone.Text;
@@ -47,21 +46,45 @@ namespace HotelManagementSystem
                 string addres = textBoxAddress.Text;
                 string gender = comboBoxGender.Text;
                 DateTime dateG = dateTimePickerBirthDay.Value.Date;
-                if (isNullOrEmpty(idGuist)) MessageBox.Show("Empty", "ID  Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bool Valid = true;
+                if (isNullOrEmpty(idGuist))
+                {
+                    HotelDbContext.setError(errorProvider1, textBoxID, "Enter SSN");
+                    Valid = false;
+                }
+                if (isNullOrEmpty(fname))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxFirstName, "Enter First Name");
+                }
+                if (isNullOrEmpty(lname))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxLastName, "Enter Last Name");
+                }
+                if (isNullOrEmpty(phone))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxPhone, "Enter Phone Num");
+                }
+                if (isNullOrEmpty(contry))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxCountry, "Enter Nationality Name");
+                }
+                if (isNullOrEmpty(addres))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxAddress, "Enter Address");
 
-                else if (fname.Trim().Equals("") || lname.Trim().Equals("") || phone.Trim().Equals(""))
-                {
-                    MessageBox.Show("Reuried fields First& Last Name + Phone Num", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if (isNullOrEmpty(addres))
+                if (isNullOrEmpty(gender))
                 {
-                    MessageBox.Show("Error  addres is Empety  ", "Address", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, comboBoxGender, "Enter Gender ");
+
                 }
-                else if (isNullOrEmpty(gender))
-                {
-                    MessageBox.Show("Error  gender is Empety  ", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                if (Valid)
                 {
                     try
                     {
@@ -91,8 +114,13 @@ namespace HotelManagementSystem
             try
             {
                 idGuist = (textBoxID.Text);
-                if (isNullOrEmpty(idGuist)) MessageBox.Show("Empty", "ID  Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
+                bool Valid = true;
+                if (isNullOrEmpty(idGuist))
+                {
+                    HotelDbContext.setError(errorProvider1, textBoxID, "Enter SSN");
+                    Valid = false;
+                }
+                if(Valid)
                 {
                     bool DeleteGuest = guest.removeGuest(idGuist);
                     if (DeleteGuest)
@@ -100,7 +128,7 @@ namespace HotelManagementSystem
                         clear_();
                         MessageBox.Show(" Guest was deleted Successfuly ", "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else MessageBox.Show("Error  Guest was'nt Deleted  ", "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show("Error  Guest was'nt Deleted  ", "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -108,38 +136,69 @@ namespace HotelManagementSystem
                 MessageBox.Show(ex.Message, "ID Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-       
+
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             string idGuist;
             try
             {
-                  idGuist = (textBoxID.Text);
-                if (isNullOrEmpty(idGuist)) MessageBox.Show("Empty", "ID  Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
+                idGuist = textBoxID.Text;
+                string fname = textBoxFirstName.Text;
+                string lname = textBoxLastName.Text;
+                string phone = textBoxPhone.Text;
+                string contry = textBoxCountry.Text;
+                string addres = textBoxAddress.Text;
+                string gender = comboBoxGender.Text;
+                DateTime dateG = dateTimePickerBirthDay.Value.Date;
+                bool Valid = true;
+                if (isNullOrEmpty(idGuist))
                 {
-                    string fname = textBoxFirstName.Text;
-                    string lname = textBoxLastName.Text;
-                    string phone = textBoxPhone.Text;
-                    string contry = textBoxCountry.Text;
-                    string addres = textBoxAddress.Text;
-                    string gender = comboBoxGender.Text;
-                    DateTime dateG = dateTimePickerBirthDay.Value.Date;
-                    if (fname.Trim().Equals("") || lname.Trim().Equals("") || phone.Trim().Equals(""))
-                    {
-                        MessageBox.Show("Reuried fields First& Last Name + Phone Num", "Empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        bool editGuest = guest.editGuest(idGuist, fname, lname, phone, contry, addres, dateG, gender);
-                        if (editGuest)
-                        {
-                            clear_();
-                            MessageBox.Show("NEW Guest was Edited Successfuly ", "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else MessageBox.Show("Error  Guest was'nt Edited  ", "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    HotelDbContext.setError(errorProvider1, textBoxID, "Enter SSN");
+                    Valid = false;
                 }
+                if (isNullOrEmpty(fname))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxFirstName, "Enter First Name");
+                }
+                if (isNullOrEmpty(lname))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxLastName, "Enter Last Name");
+                }
+                if (isNullOrEmpty(phone))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxPhone, "Enter Phone Num");
+                }
+                if (isNullOrEmpty(contry))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxCountry, "Enter Nationality Name");
+                }
+                if (isNullOrEmpty(addres))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, textBoxAddress, "Enter Address");
+
+                }
+                if (isNullOrEmpty(gender))
+                {
+                    Valid = false;
+                    HotelDbContext.setError(errorProvider1, comboBoxGender, "Enter Gender ");
+
+                }
+                if (Valid)
+                {
+                    bool editGuest = guest.editGuest(idGuist, fname, lname, phone, contry, addres, dateG, gender);
+                    if (editGuest)
+                    {
+                        clear_();
+                        MessageBox.Show("NEW Guest was Edited Successfuly ", "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else MessageBox.Show("Error  Guest was'nt Edited  ", "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             catch (Exception ex)
             {
@@ -154,12 +213,20 @@ namespace HotelManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            string idGuist;
+            string idGuist=textBoxSearch.Text;
             try
             {
-                idGuist = (textBoxSearch.Text);
-                if (isNullOrEmpty(idGuist)) MessageBox.Show("Empty", "ID  Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else dataGridViewGuestInfo.DataSource = guest.GetOnlyGuest(idGuist);
+                bool Valid = true;
+                if (isNullOrEmpty(idGuist))
+                {
+                    HotelDbContext.setError(errorProvider1, textBoxSearch, "Enter SSN");
+                    Valid = false;
+                }
+                if (Valid)
+                {
+                    clear_();
+                    dataGridViewGuestInfo.DataSource = guest.GetOnlyGuest(idGuist);
+                }
             }
             catch (Exception ex)
             {
@@ -171,18 +238,22 @@ namespace HotelManagementSystem
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
+            errorProvider1.Clear();
+
         }
 
         private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
+               errorProvider1.Clear();
         }
 
         private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
+            errorProvider1.Clear();
         }
 
         private void labelPhone_Click(object sender, EventArgs e)
@@ -208,14 +279,49 @@ namespace HotelManagementSystem
         }
         private void clear_()
         {
+            errorProvider1.Clear();
+
             textBoxID.Text = textBoxFirstName.Text = textBoxLastName.Text = textBoxPhone.Text = textBoxCountry.Text = textBoxSearch.Text = "";
-            textBoxAddress.Text = comboBoxGender.Text = "";
+            textBoxAddress.Text = comboBoxGender.Text =default;
             dataGridViewGuestInfo.DataSource = guest.GetGuests();
         }
 
         private void pictureBoxGuestLogo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar))
+                e.Handled = true;
+            errorProvider1.Clear();
+        }
+
+        private void textBoxLastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar)) 
+            e.Handled = true;
+            errorProvider1.Clear();
+        }
+
+        private void textBoxCountry_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar)) 
+            e.Handled = true;
+            errorProvider1.Clear();
+        }
+
+        private void textBoxAddress_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar)) 
+            e.Handled = true;
+            errorProvider1.Clear();
+        }
+
+        private void comboBoxGender_TextChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
         }
     }
 }
