@@ -10,12 +10,12 @@ namespace HotelManagementSystem.Database
     internal class GuestQueryDB
     {
         readonly string connectionString;
-        private  MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=hotel;Convert Zero Datetime=True;");
-        //private readonly MySqlConnection coon;
+       // private  MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=hotel;Convert Zero Datetime=True;");
+        private readonly MySqlConnection conn;
         public GuestQueryDB()
         {
-            // connectionString = Environment.GetEnvironmentVariable("hotelmanagmentsystemdpConnectionString");
-            //conn = new MySqlConnection(connectionString);
+            connectionString = Environment.GetEnvironmentVariable("hotelmanagmentsystemdpConnectionString");
+            conn = new MySqlConnection(connectionString);
         }
         public bool insertGuest(string GID, string fName, string lName, string Phone, string country, string addres, DateTime DateG, string gend)
         {

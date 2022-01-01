@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelGuestTitel = new System.Windows.Forms.Panel();
             this.labelGuestDiscripe = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
@@ -53,8 +54,10 @@
             this.labelGender = new System.Windows.Forms.Label();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelGuestTitel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuestInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGuestTitel
@@ -107,6 +110,7 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(190, 33);
             this.textBoxFirstName.TabIndex = 4;
+            this.textBoxFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFirstName_KeyPress);
             // 
             // labelFirstName
             // 
@@ -127,6 +131,7 @@
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(190, 33);
             this.textBoxLastName.TabIndex = 6;
+            this.textBoxLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLastName_KeyPress);
             // 
             // labelLastName
             // 
@@ -169,17 +174,18 @@
             this.textBoxCountry.Name = "textBoxCountry";
             this.textBoxCountry.Size = new System.Drawing.Size(190, 33);
             this.textBoxCountry.TabIndex = 10;
+            this.textBoxCountry.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCountry_KeyPress);
             // 
             // labelCountry
             // 
             this.labelCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelCountry.AutoSize = true;
             this.labelCountry.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCountry.Location = new System.Drawing.Point(40, 324);
+            this.labelCountry.Location = new System.Drawing.Point(5, 330);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(103, 30);
+            this.labelCountry.Size = new System.Drawing.Size(136, 30);
             this.labelCountry.TabIndex = 9;
-            this.labelCountry.Text = "Country  :";
+            this.labelCountry.Text = "Nationalatiy :";
             // 
             // labelBOD
             // 
@@ -309,6 +315,7 @@
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(190, 33);
             this.comboBoxGender.TabIndex = 20;
+            this.comboBoxGender.TextChanged += new System.EventHandler(this.comboBoxGender_TextChanged);
             // 
             // labelGender
             // 
@@ -330,6 +337,7 @@
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(190, 33);
             this.textBoxAddress.TabIndex = 23;
+            this.textBoxAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAddress_KeyPress);
             // 
             // labelAddress
             // 
@@ -341,6 +349,10 @@
             this.labelAddress.Size = new System.Drawing.Size(98, 30);
             this.labelAddress.TabIndex = 22;
             this.labelAddress.Text = "Address :";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // GuestUserControl
             // 
@@ -377,6 +389,7 @@
             this.panelGuestTitel.ResumeLayout(false);
             this.panelGuestTitel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuestInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,5 +422,6 @@
         private Label labelGender;
         private TextBox textBoxAddress;
         private Label labelAddress;
+        private ErrorProvider errorProvider1;
     }
 }
