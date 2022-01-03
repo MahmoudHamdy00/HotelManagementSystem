@@ -38,17 +38,18 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 100.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1614, 189);
+            this.label1.Size = new System.Drawing.Size(1299, 153);
             this.label1.TabIndex = 3;
             this.label1.Text = "paymentUserControl";
             // 
             // PaymentUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "PaymentUserControl";
-            this.Size = new System.Drawing.Size(1024, 587);
+            this.Size = new System.Drawing.Size(896, 440);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,7 +10,7 @@ namespace HotelManagementSystem.Database
     internal class GuestQueryDB
     {
         readonly string connectionString;
-       // private  MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=hotel;Convert Zero Datetime=True;");
+        // private  MySqlConnection conn = new MySqlConnection("datasource=localhost;port=3306;username=root;password=;database=hotel;Convert Zero Datetime=True;");
         private readonly MySqlConnection conn;
         public GuestQueryDB()
         {
@@ -22,15 +22,16 @@ namespace HotelManagementSystem.Database
             // conn.Open();
             string timeToString_ = DateG.Year.ToString() + "-" + DateG.Month.ToString() + "-" + DateG.Day.ToString();
             string insertQuery = $"INSERT INTO Guests ( `SSN`,`firstName` ,`lastName` ,`address`,`gender` , `mobileNumber`,`birthOfDate` ,`nationality`) VALUES('{GID}','{fName}','{lName}','{addres}','{gend}','{Phone}','{timeToString_}','{country}');";
-            MySqlCommand command = new MySqlCommand(insertQuery, conn); 
-            try {
-            if (conn.State == ConnectionState.Closed)
-                conn.Open();
-            if (command.ExecuteNonQuery() == 1)
+            MySqlCommand command = new MySqlCommand(insertQuery, conn);
+            try
             {
-                conn.Close();
-                return true;
-            }
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    conn.Close();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
@@ -66,13 +67,13 @@ namespace HotelManagementSystem.Database
             MySqlCommand command = new MySqlCommand(updateQuery, conn);
             try
             {
-            if (conn.State == ConnectionState.Closed)
-                conn.Open();
-            if (command.ExecuteNonQuery() == 1)
-            {
-                conn.Close();
-                return true;
-            }
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    conn.Close();
+                    return true;
+                }
             }
             catch (Exception ex)
             {
