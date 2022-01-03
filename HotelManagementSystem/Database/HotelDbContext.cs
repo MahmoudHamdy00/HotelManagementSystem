@@ -529,6 +529,42 @@ namespace HotelManagementSystem.Database
             finally { connection.Close(); }
 
         }
+        public static void ShowPayments(string ssn, DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT * FROM payments where SSN='{ssn}';";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null && reader.HasRows)
+                {
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+
+                    dataGridView.DataSource = dataTable;
+                    dataGridView.Columns[0].HeaderText = "Guest SSN";
+                    dataGridView.Columns[1].HeaderText = "Reservation Id";
+                    dataGridView.Columns[2].HeaderText = "Total Price";
+               
+                   // dataGridView.Columns.Remove(dataGridView.Columns[4]);
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
     }
 
 }
