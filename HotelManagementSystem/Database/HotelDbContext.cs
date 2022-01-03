@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HotelManagementSystem.UserControls;
 using System.Data;
+using HotelManagementSystem.Models;
 
 namespace HotelManagementSystem.Database
 {
@@ -262,9 +263,66 @@ namespace HotelManagementSystem.Database
             }
             return true;
         }
+        public static void fillRoomType(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT roomType FROM RoomTypes;";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null)
+                {
+                    while (reader.Read())
+                    {
+                        comboBox.Items.Add(reader.GetString(0));
+                    }
+                }
+                else throw new Exception("NO Result");
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public static void fillRoomId(ComboBox comboBox, string roomType)
+        {
+            comboBox.Items.Clear();
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT id FROM Rooms WHERE roomType = '{roomType}' AND isReserved = false;";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null)
+                {
+                    while (reader.Read())
+                    {
+
+                        comboBox.Items.Add(reader.GetInt32(0).ToString());
+                    }
+                }
+                else throw new Exception("NO Result");
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
         public static bool isNullOrEmpty(string text)
         {
-            return text == null || text.Length == 0;
+            return text == null || text.Trim().Length == 0;
         }
         public static void showError(string errorMessage, string title = "Error")
         {
@@ -276,5 +334,201 @@ namespace HotelManagementSystem.Database
             if (clearPrevious) errorProvider.Clear();
             errorProvider.SetError(control, value);
         }
+        public static bool AddReservation(string ssn, int roomId, DateTime checkInDate)
+        {
+            bool isOk = true;
+            try
+            {
+                connection.Open();
+                string insertQuery = $"insert into Reservations(`SSN`, `roomId` ,`checkin`) values ('{ssn}',{roomId},'{checkInDate.Date.ToString("yyyy-MM-dd")}');";
+                MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                    MessageBox.Show("Successfully Reservation");
+                else
+                    throw new Exception("Not Registered");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+                isOk = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isOk;
+        }
+
+
+        public static Guest getGuestInfo(string ssn)
+        {
+            Guest guest = null;
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT * FROM guests WHERE ssn = '{ssn}' LIMIT 1;";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null)
+                {
+                    while (reader.Read())
+                    {
+                        guest = new Guest();
+                        guest.firstName = reader.GetString("firstName");
+
+                        guest.lastName = reader.GetString("lastName");
+
+                        guest.address = reader.GetString("address");
+
+                        guest.gender = reader.GetString("gender");
+
+                        guest.mobileNumber = reader.GetString("mobileNumber");
+
+                        guest.birthOfDate = reader.GetDateTime("birthOfDate");
+                        /*                        MessageBox.Show("= " + reader.GetString("birthOfDate"));
+                                                MessageBox.Show("= " + reader.GetDateTime("birthOfDate"));*/
+                        guest.nationality = reader.GetString("nationality");
+
+                    }
+                }
+                else throw new Exception("NO Result");
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return guest;
+        }
+        public static void ShowReservations(string ssn, DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT * FROM reservations where SSN='{ssn}' and checkout is null;";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null && reader.HasRows)
+                {
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+
+                    dataGridView.DataSource = dataTable;
+                    dataGridView.Columns[0].HeaderText = "Id";
+                    dataGridView.Columns[1].HeaderText = "Guest SSN";
+                    dataGridView.Columns[2].HeaderText = "Room Id";
+                    dataGridView.Columns[3].HeaderText = "Check-In Date";
+                    dataGridView.Columns[5].HeaderText = "Created at";
+                    dataGridView.Columns[6].HeaderText = "Updated At";
+                    dataGridView.Columns.Remove(dataGridView.Columns[4]);
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public static bool checkoutReservation(string ssn, string reservationId, DateTime checkInDate, DateTime checkOutDate, string roomId)
+        {
+            bool isOk = true;
+            try
+            {
+                connection.Open();
+                string insertQuery = $"UPDATE reservations SET checkout='{checkOutDate.Date.ToString("yyyy-MM-dd")}' WHERE id='{reservationId}';";
+                MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    MessageBox.Show("Successfully checked out");
+                    int totalDays = (checkOutDate.Date - checkInDate.Date).Days + 1;
+                    AddPayment(ssn, reservationId, roomId, totalDays);
+                }
+                else
+                    throw new Exception("Not Changed");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+                isOk = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return isOk;
+        }
+
+        public static double getRoomPrice(string roomId)
+        {
+
+            double price = -1;
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                    connection.Open();
+                string selectQuery = $"SELECT roomType FROM rooms where id='{roomId}';";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                var reader = cmd.ExecuteScalar();
+                if (reader == null)
+                    throw new Exception("Couldn't find room type");
+                string roomType = reader.ToString();
+
+                selectQuery = $"SELECT pricePerDay FROM roomtypes where roomtype='{roomType}';";
+                cmd = new MySqlCommand(selectQuery, connection);
+                reader = cmd.ExecuteScalar();
+                if (reader == null)
+                    throw new Exception("Couldn't find room price");
+                price = Convert.ToDouble(reader);
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+                // throw e;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return price;
+        }
+        public static void AddPayment(string ssn, string reservationId, string roomId, int totalDays)
+        {
+            try
+            {
+                double roomPrice = getRoomPrice(roomId);
+                double totalPrice = roomPrice * totalDays;
+                if (connection.State != ConnectionState.Open)
+                    connection.Open();
+                string insertQuery = $"insert into payments (`SSN`,`reservationId`,`totalPrice`) values('{ssn}','{reservationId}',{totalPrice});";
+                MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret != 1)
+                    throw new Exception("Not Registered");
+
+            }
+            catch (Exception e)
+            {
+                Helpper.showError(e.Message);
+            }
+            finally { connection.Close(); }
+
+        }
     }
+
 }
