@@ -21,8 +21,8 @@ namespace HotelManagementSystem.Database
         {
             // conn.Open();
             string timeToString_ = DateG.Year.ToString() + "-" + DateG.Month.ToString() + "-" + DateG.Day.ToString();
-            string insertQuery = $"INSERT INTO Guests VALUES('{GID}','{fName}','{lName}','{Phone}','{country}','{addres}','{timeToString_}','{gend}');";
-           
+            string insertQuery = $"INSERT INTO Guests ( `SSN`,`firstName` ,`lastName` ,`address`,`gender` , `mobileNumber`,`birthOfDate` ,`nationality`) VALUES('{GID}','{fName}','{lName}','{addres}','{gend}','{Phone}','{timeToString_}','{country}');";
+
             MySqlCommand command = new MySqlCommand(insertQuery, conn); 
             try {
             if (conn.State == ConnectionState.Closed)
