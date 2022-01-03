@@ -263,6 +263,7 @@ namespace HotelManagementSystem
 
         private void dataGridViewGuestInfo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             textBoxID.Text = dataGridViewGuestInfo.CurrentRow.Cells[0].Value.ToString();
             textBoxFirstName.Text = dataGridViewGuestInfo.CurrentRow.Cells[1].Value.ToString();
             textBoxLastName.Text = dataGridViewGuestInfo.CurrentRow.Cells[2].Value.ToString();
@@ -270,7 +271,9 @@ namespace HotelManagementSystem
             comboBoxGender.Text = dataGridViewGuestInfo.CurrentRow.Cells[4].Value.ToString();
             textBoxPhone.Text = dataGridViewGuestInfo.CurrentRow.Cells[5].Value.ToString();
             textBoxCountry.Text = dataGridViewGuestInfo.CurrentRow.Cells[7].Value.ToString();
-            try { dateTimePickerBirthDay.Value = Convert.ToDateTime(dataGridViewGuestInfo.CurrentRow.Cells[6].Value.ToString()); }
+            try {
+                dateTimePickerBirthDay.Value = Convert.ToDateTime(dataGridViewGuestInfo.CurrentRow.Cells[6].Value.ToString()); 
+            }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Format Date Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         public static bool isNullOrEmpty(string text)

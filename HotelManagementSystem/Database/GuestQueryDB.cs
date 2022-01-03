@@ -83,7 +83,7 @@ namespace HotelManagementSystem.Database
             conn.Close();
             return false;
         }
-        //Search
+        //Search 
         public bool removeGuest(string GID)
         {
             //delete from Guest where id=@IDD using 
