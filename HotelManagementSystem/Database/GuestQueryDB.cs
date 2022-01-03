@@ -22,7 +22,6 @@ namespace HotelManagementSystem.Database
             // conn.Open();
             string timeToString_ = DateG.Year.ToString() + "-" + DateG.Month.ToString() + "-" + DateG.Day.ToString();
             string insertQuery = $"INSERT INTO Guests ( `SSN`,`firstName` ,`lastName` ,`address`,`gender` , `mobileNumber`,`birthOfDate` ,`nationality`) VALUES('{GID}','{fName}','{lName}','{addres}','{gend}','{Phone}','{timeToString_}','{country}');";
-
             MySqlCommand command = new MySqlCommand(insertQuery, conn); 
             try {
             if (conn.State == ConnectionState.Closed)
@@ -50,9 +49,9 @@ namespace HotelManagementSystem.Database
             adapter.Fill(guestTable);
             return guestTable;
         }
-        public DataTable GetOnlyGuest(string IDD)
+        public DataTable GetOnlyGuest(string GID)
         {
-            MySqlCommand command = new MySqlCommand($"SELECT * From Guests where SSN='{IDD}';", conn);
+            MySqlCommand command = new MySqlCommand($"SELECT * From Guests where SSN='{GID}';", conn);
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
             DataTable guestTable = new DataTable();
             adapter.SelectCommand = command;
@@ -63,12 +62,10 @@ namespace HotelManagementSystem.Database
         public bool editGuest(string GID, string fName, string lName, string Phone, string country, string addres, DateTime DateG, string gend)
         {
             string timeToString_ = DateG.Year.ToString() + "-" + DateG.Month.ToString() + "-" + DateG.Day.ToString();
-            string updateQuery = $"UPDATE Guests SET SSN = '{GID}', first_Name = '{fName}', last_Name = '{lName}', Phone = '{Phone}', Nationality = '{country}', Address = '{addres}', dateOfBirth = '{timeToString_}', Gender = '{gend}' where SSN = '{GID}'; ";
+            string updateQuery = $"CALL EditGuest('{GID}','{fName}','{lName}','{Phone}','{country}','{addres}','{timeToString_}','{gend}');";
             MySqlCommand command = new MySqlCommand(updateQuery, conn);
             try
             {
-           
-          
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
             if (command.ExecuteNonQuery() == 1)
@@ -86,11 +83,11 @@ namespace HotelManagementSystem.Database
             return false;
         }
         //Search
-        public bool removeGuest(string IDD)
-        {//delete from Guest where id=@IDD
-            string DeleteQyery = "DELETE FROM Guests where SSN=@Gid";
+        public bool removeGuest(string GID)
+        {
+            //delete from Guest where id=@IDD using 
+            string DeleteQyery = $"CALL RemoveGuest('{GID}');";
             MySqlCommand command = new MySqlCommand(DeleteQyery, conn);
-            command.Parameters.Add("@Gid", MySqlDbType.VarChar).Value = IDD;
             if (conn.State == ConnectionState.Closed)
                 conn.Open();
             if (command.ExecuteNonQuery() == 1)
