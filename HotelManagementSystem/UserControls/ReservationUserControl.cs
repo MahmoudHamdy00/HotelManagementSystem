@@ -29,9 +29,9 @@ namespace HotelManagementSystem.UserControls
         private void addReservBtn_Click(object sender, EventArgs e)
         {
             bool isOk = true;
-            if (Helpper.isNullOrEmpty(SSNTextBox.Text))
+            if (Helpper.isNullOrEmpty(checkInSSNComboBox.Text))
             {
-                Helpper.setError(errorProvider1, SSNTextBox, "Please enter your SSN");
+                Helpper.setError(errorProvider1, checkInSSNComboBox, "Please enter your SSN");
                 isOk = false;
             }
             if (Helpper.isNullOrEmpty(roomIdComboBox.Text))
@@ -45,7 +45,7 @@ namespace HotelManagementSystem.UserControls
                 isOk = false;
             }
             if (isOk)
-                HotelDbContext.AddReservation(SSNTextBox.Text, Convert.ToInt32(roomIdComboBox.Text), checkInDateTimePicker.Value);
+                HotelDbContext.AddReservation(checkInSSNComboBox.Text, Convert.ToInt32(roomIdComboBox.Text), checkInDateTimePicker.Value);
             clearTab1();
         }
 
@@ -53,6 +53,8 @@ namespace HotelManagementSystem.UserControls
         {
             checkInDateTimePicker.MinDate = DateTime.Now;
             HotelDbContext.fillRoomType(roomTypeComboBox);
+            HotelDbContext.fillSSN(tab2SSNComboBox);
+            HotelDbContext.fillSSN(checkInSSNComboBox);
 
         }
 
@@ -69,7 +71,7 @@ namespace HotelManagementSystem.UserControls
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                Guest guset = HotelDbContext.getGuestInfo(SSNTextBox.Text);
+                Guest guset = HotelDbContext.getGuestInfo(checkInSSNComboBox.Text);
                 if (guset == null)
                 {
                     Helpper.showError("There isn't exist any guest with this SSN", "Guest Not Found");
@@ -90,7 +92,7 @@ namespace HotelManagementSystem.UserControls
         }
         private void clearTab1()
         {
-            SSNTextBox.Text = "";
+            checkInSSNComboBox.Text = "";
             HotelDbContext.fillRoomId(roomIdComboBox, roomTypeComboBox.Text);
             firstNameTextBox.Text = "";
             lastNameTextBox.Text = "";
@@ -108,12 +110,7 @@ namespace HotelManagementSystem.UserControls
             tab2ReservationLabel.Text = "?";
         }
 
-        private void tab2SSNTextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != (char)Keys.Enter) return;
-            HotelDbContext.ShowReservations(tab2SSNTextBox.Text, dataGridView1);
-            clearTab2();
-        }
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -126,9 +123,9 @@ namespace HotelManagementSystem.UserControls
         private void checkOutButton_Click(object sender, EventArgs e)
         {
             bool isOk = true;
-            if (Helpper.isNullOrEmpty(tab2SSNTextBox.Text))
+            if (Helpper.isNullOrEmpty(tab2SSNComboBox.Text))
             {
-                Helpper.setError(errorProvider1, tab2SSNTextBox, "Please enter an SSN");
+                Helpper.setError(errorProvider1, tab2SSNComboBox, "Please enter an SSN");
                 isOk = false;
             }
             if (Helpper.isNullOrEmpty(tab2ReservationLabel.Text) || tab2ReservationLabel.Text == "?")
@@ -138,9 +135,9 @@ namespace HotelManagementSystem.UserControls
             }
             if (isOk)
             {
-                HotelDbContext.checkoutReservation(tab2SSNTextBox.Text, tab2ReservationLabel.Text, Convert.ToDateTime(tab2checkInDateTimeLabel.Text), tab2checkOutDateTimePicker.Value, tab2RoomIdLabel.Text);
+                HotelDbContext.checkoutReservation(tab2SSNComboBox.Text, tab2ReservationLabel.Text, Convert.ToDateTime(tab2checkInDateTimeLabel.Text), tab2checkOutDateTimePicker.Value, tab2RoomIdLabel.Text);
             }
-            tab2SSNTextBox_KeyPress(tab2SSNTextBox, new KeyPressEventArgs((char)Keys.Enter));
+            tab2SSNComboBox_KeyPress(tab2SSNComboBox, new KeyPressEventArgs((char)Keys.Enter));
             HotelDbContext.fillRoomId(roomIdComboBox, roomTypeComboBox.Text);
         }
 
@@ -148,5 +145,54 @@ namespace HotelManagementSystem.UserControls
         {
             HotelDbContext.fillRoomType(roomTypeComboBox);
         }
+
+        private void tab2SSNComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != (char)Keys.Enter) return;
+            HotelDbContext.ShowReservations(tab2SSNComboBox.Text, dataGridView1);
+            clearTab2();
+        }
+
+        private void tab2SSNComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HotelDbContext.ShowReservations(tab2SSNComboBox.Text, dataGridView1);
+            clearTab2();
+        }
+
+        private void checkInSSNComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HotelDbContext.ShowReservations(tab2SSNComboBox.Text, dataGridView1);
+
+            Guest guset = HotelDbContext.getGuestInfo(checkInSSNComboBox.Text);
+            if (guset == null)
+            {
+                Helpper.showError("There isn't exist any guest with this SSN", "Guest Not Found");
+                return;
+            }
+            firstNameTextBox.Text = guset.firstName;
+            lastNameTextBox.Text = guset.lastName;
+            addressTextBox.Text = guset.address;
+            genderComboBox.Items.Add(guset.gender);
+            genderComboBox.Text = guset.gender;
+            mobileNumberTextBox.Text = guset.mobileNumber;
+            birthDateDateTimePicker.Value = guset.birthOfDate;
+            nationalityTextBox.Text = guset.nationality;
+            // clearTab1();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            HotelDbContext.fillSSN(tab2SSNComboBox);
+        }
+
+        private void SSNLabel_Click(object sender, EventArgs e)
+        {
+            HotelDbContext.fillSSN(checkInSSNComboBox);
+
+
+        }
     }
+
+
+
 }

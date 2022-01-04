@@ -291,7 +291,35 @@ namespace HotelManagementSystem.Database
                 connection.Close();
             }
         }
+        public static void fillSSN(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            try
+            {
+                connection.Open();
+                string selectQuery = $"select ssn from guests;";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null)
+                {
+                    while (reader.Read())
+                    {
+                        comboBox.Items.Add(reader.GetString(0));
+                    }
+                }
+                else throw new Exception("NO Result");
 
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+       
         public static void fillRoomId(ComboBox comboBox, string roomType)
         {
             comboBox.Items.Clear();
