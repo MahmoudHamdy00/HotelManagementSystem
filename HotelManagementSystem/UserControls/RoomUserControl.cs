@@ -35,6 +35,8 @@ namespace HotelManagementSystem.UserControls
             {
                 HotelDbContext.fillRoomType(roomTypeComboBox);
                 HotelDbContext.ShowRoomTypes(roomTypeDataGridView);
+                HotelDbContext.ShowRoomIds(RoomsDataGridView);
+
                 clearFieldsBtn.PerformClick();
             }
 
@@ -60,6 +62,8 @@ namespace HotelManagementSystem.UserControls
         {
             HotelDbContext.EditRoomType(roomTypeTextBox, roomPriceTextBox, errorProvider1);
             HotelDbContext.ShowRoomTypes(roomTypeDataGridView);
+            HotelDbContext.ShowRoomIds(RoomsDataGridView);
+
             clearFieldsBtn.PerformClick();
         }
 
@@ -67,6 +71,8 @@ namespace HotelManagementSystem.UserControls
         {
             HotelDbContext.DeleteRoomType(roomTypeTextBox, errorProvider1);
             HotelDbContext.ShowRoomTypes(roomTypeDataGridView);
+            HotelDbContext.ShowRoomIds(RoomsDataGridView);
+
             clearFieldsBtn.PerformClick();
         }
 
