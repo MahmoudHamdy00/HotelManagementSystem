@@ -55,7 +55,6 @@ namespace HotelManagementSystem.UserControls
             {
                 tabControl1.TabPages.Remove(tabPage1);
                tabControl1.TabPages.Remove(tabPage2);
-               tabControl1.TabPages.Remove(tabPage3);
             }
            usernameLabel.Text = usernameLabel.Text.Replace("?", LoginInfo._username);
         }
