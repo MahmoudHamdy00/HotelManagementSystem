@@ -1,4 +1,4 @@
-﻿namespace HotelManagementSystem.UserControls
+namespace HotelManagementSystem.UserControls
 {
     partial class RoomUserControl
     {
@@ -215,6 +215,7 @@
             this.clearFieldRoomsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.clearFieldRoomsBtn.BackColor = System.Drawing.Color.DarkGray;
             this.clearFieldRoomsBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+
 
             this.clearFieldRoomsBtn.Location = new System.Drawing.Point(88, 286);
             this.clearFieldRoomsBtn.Name = "clearFieldRoomsBtn";

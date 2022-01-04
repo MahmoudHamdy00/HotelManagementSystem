@@ -232,6 +232,7 @@
             // userTypeComboBox
             // 
             this.userTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
             this.userTypeComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userTypeComboBox.FormattingEnabled = true;
             this.userTypeComboBox.Items.AddRange(new object[] {
@@ -353,6 +354,7 @@
             // genderComboBox
             // 
             this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
             this.genderComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.genderComboBox.FormattingEnabled = true;
             this.genderComboBox.Items.AddRange(new object[] {
