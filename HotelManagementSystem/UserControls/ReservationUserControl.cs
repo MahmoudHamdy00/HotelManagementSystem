@@ -22,7 +22,7 @@ namespace HotelManagementSystem.UserControls
 
         private void roomIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-           if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
         }
 
@@ -78,6 +78,7 @@ namespace HotelManagementSystem.UserControls
                 firstNameTextBox.Text = guset.firstName;
                 lastNameTextBox.Text = guset.lastName;
                 addressTextBox.Text = guset.address;
+                genderComboBox.Items.Add(guset.gender);
                 genderComboBox.Text = guset.gender;
                 mobileNumberTextBox.Text = guset.mobileNumber;
                 birthDateDateTimePicker.Value = guset.birthOfDate;
@@ -90,8 +91,7 @@ namespace HotelManagementSystem.UserControls
         private void clearTab1()
         {
             SSNTextBox.Text = "";
-            roomTypeComboBox.Items.Clear();
-            roomIdComboBox.Items.Clear();
+            HotelDbContext.fillRoomId(roomIdComboBox, roomTypeComboBox.Text);
             firstNameTextBox.Text = "";
             lastNameTextBox.Text = "";
             addressTextBox.Text = "";
@@ -141,6 +141,7 @@ namespace HotelManagementSystem.UserControls
                 HotelDbContext.checkoutReservation(tab2SSNTextBox.Text, tab2ReservationLabel.Text, Convert.ToDateTime(tab2checkInDateTimeLabel.Text), tab2checkOutDateTimePicker.Value, tab2RoomIdLabel.Text);
             }
             tab2SSNTextBox_KeyPress(tab2SSNTextBox, new KeyPressEventArgs((char)Keys.Enter));
+            HotelDbContext.fillRoomId(roomIdComboBox, roomTypeComboBox.Text);
         }
 
         private void roomTypeLabel_Click(object sender, EventArgs e)
