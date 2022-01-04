@@ -90,13 +90,14 @@
             // forgetPasswordLinkLabel
             // 
             this.forgetPasswordLinkLabel.AutoSize = true;
-            this.forgetPasswordLinkLabel.LinkColor = System.Drawing.Color.Red;
+            this.forgetPasswordLinkLabel.LinkColor = System.Drawing.Color.Transparent;
             this.forgetPasswordLinkLabel.Location = new System.Drawing.Point(198, 271);
             this.forgetPasswordLinkLabel.Name = "forgetPasswordLinkLabel";
             this.forgetPasswordLinkLabel.Size = new System.Drawing.Size(117, 20);
             this.forgetPasswordLinkLabel.TabIndex = 5;
             this.forgetPasswordLinkLabel.TabStop = true;
             this.forgetPasswordLinkLabel.Text = "Forget Password";
+            this.forgetPasswordLinkLabel.Visible = false;
             this.forgetPasswordLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.forgetPasswordLinkLabel_LinkClicked);
             // 
             // usernameErrorProvider
