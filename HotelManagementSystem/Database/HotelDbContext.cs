@@ -530,16 +530,25 @@ namespace HotelManagementSystem.Database
         {
             try
             {
-                string roomType = getRoomType(roomId);
-                double roomPrice = getRoomPrice(roomType);
-                double totalPrice = roomPrice * totalDays;
+                double totalPrice = -1;
+                string procedure = $"GetTotalPrice";
+                MySqlCommand cmd = new MySqlCommand(procedure, connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@reservationId", MySqlDbType.Int32).Value = reservationId;
+                cmd.Parameters["@reservationId"].Direction = ParameterDirection.Input;
+                cmd.Parameters.Add(new MySqlParameter("?totalPrice", MySqlDbType.Double));
+                cmd.Parameters["?totalPrice"].Direction = ParameterDirection.Output;
+                int ret = cmd.ExecuteNonQuery();
+                totalPrice = Convert.ToDouble(cmd.Parameters["?totalPrice"].Value);
                 if (connection.State != ConnectionState.Open)
                     connection.Open();
                 string insertQuery = $"insert into payments (`SSN`,`reservationId`,`totalPrice`) values('{ssn}','{reservationId}',{totalPrice});";
-                MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
-                int ret = cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand(insertQuery, connection);
+                ret = cmd.ExecuteNonQuery();
                 if (ret != 1)
                     throw new Exception("Not Registered");
+
+
 
             }
             catch (Exception e)
