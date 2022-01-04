@@ -99,7 +99,7 @@ namespace HotelManagementSystem
             {
                 bool isAdmin=false;
                 connection.Open();
-                MySqlCommand cmd = new MySqlCommand($"select isAdmin from employees where employees.employeeUserName='{username}' and employees.employeePassowrd='{password}';", connection);
+                MySqlCommand cmd = new MySqlCommand($"select isAdmin from Users where Users.username='{username}' and Users.password='{password}';", connection);
                 object ret = cmd.ExecuteScalar();
                 if (ret != null)
                 {
