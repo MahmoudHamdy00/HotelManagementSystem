@@ -138,5 +138,10 @@ namespace HotelManagementSystem.UserControls
             }
             tab2SSNTextBox_KeyPress(tab2SSNTextBox, new KeyPressEventArgs((char)Keys.Enter));
         }
+
+        private void roomTypeLabel_Click(object sender, EventArgs e)
+        {
+            HotelDbContext.fillRoomType(roomTypeComboBox);
+        }
     }
 }
