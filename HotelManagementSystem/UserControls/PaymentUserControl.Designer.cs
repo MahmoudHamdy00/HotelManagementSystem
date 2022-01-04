@@ -76,6 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(82, 67);
             this.label1.Name = "label1";
+
             this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 10;
             this.label1.Text = "SSN:";
@@ -169,10 +170,11 @@
             this.totalPriceLabel.Size = new System.Drawing.Size(16, 20);
             this.totalPriceLabel.TabIndex = 36;
             this.totalPriceLabel.Text = "?";
+
             // 
             // PaymentUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.totalPriceLabel);
             this.Controls.Add(this.label8);
@@ -185,11 +187,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
+
             this.Controls.Add(this.SSNTextBox);
             this.Controls.Add(this.dataGridView1);
             this.Name = "PaymentUserControl";
             this.Size = new System.Drawing.Size(1355, 781);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Name = "PaymentUserControl";
+            this.Size = new System.Drawing.Size(896, 440);
+
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -163,6 +163,7 @@
             this.roomTypeLabel.Size = new System.Drawing.Size(84, 20);
             this.roomTypeLabel.TabIndex = 13;
             this.roomTypeLabel.Text = "Room Type";
+            this.roomTypeLabel.Click += new System.EventHandler(this.roomTypeLabel_Click);
             // 
             // addressTextBox
             // 
