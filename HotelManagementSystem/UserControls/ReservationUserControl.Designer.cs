@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.addReservBtn = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.SSNTextBox = new System.Windows.Forms.TextBox();
             this.SSNLabel = new System.Windows.Forms.Label();
             this.roomIdLabel = new System.Windows.Forms.Label();
             this.checkInDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -55,8 +54,10 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.checkInSSNComboBox = new System.Windows.Forms.ComboBox();
             this.guestInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tab2SSNComboBox = new System.Windows.Forms.ComboBox();
             this.tab2checkInDateTimeLabel = new System.Windows.Forms.Label();
             this.tab2RoomIdLabel = new System.Windows.Forms.Label();
             this.tab2ReservationLabel = new System.Windows.Forms.Label();
@@ -68,7 +69,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.tab2SSNTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -95,16 +95,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // SSNTextBox
-            // 
-            this.SSNTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.SSNTextBox.Location = new System.Drawing.Point(307, 151);
-            this.SSNTextBox.Name = "SSNTextBox";
-            this.SSNTextBox.PlaceholderText = "Type an SSN then press Enter";
-            this.SSNTextBox.Size = new System.Drawing.Size(209, 27);
-            this.SSNTextBox.TabIndex = 3;
-            this.SSNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SSNTextBox_KeyPress);
-            // 
             // SSNLabel
             // 
             this.SSNLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -116,6 +106,7 @@
             this.SSNLabel.Size = new System.Drawing.Size(56, 24);
             this.SSNLabel.TabIndex = 4;
             this.SSNLabel.Text = "SSN:";
+            this.SSNLabel.Click += new System.EventHandler(this.SSNLabel_Click);
             // 
             // roomIdLabel
             // 
@@ -368,10 +359,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Teal;
+            this.tabPage1.Controls.Add(this.checkInSSNComboBox);
             this.tabPage1.Controls.Add(this.guestInfoGroupBox);
             this.tabPage1.Controls.Add(this.SSNLabel);
             this.tabPage1.Controls.Add(this.addReservBtn);
-            this.tabPage1.Controls.Add(this.SSNTextBox);
             this.tabPage1.Controls.Add(this.roomIdLabel);
             this.tabPage1.Controls.Add(this.checkInDateTimePicker);
             this.tabPage1.Controls.Add(this.checkInLabel);
@@ -380,10 +371,20 @@
             this.tabPage1.Controls.Add(this.roomTypeLabel);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1361, 691);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Check-In";
+            // 
+            // checkInSSNComboBox
+            // 
+            this.checkInSSNComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.checkInSSNComboBox.FormattingEnabled = true;
+            this.checkInSSNComboBox.Location = new System.Drawing.Point(307, 151);
+            this.checkInSSNComboBox.Name = "checkInSSNComboBox";
+            this.checkInSSNComboBox.Size = new System.Drawing.Size(209, 28);
+            this.checkInSSNComboBox.TabIndex = 41;
+            this.checkInSSNComboBox.SelectedIndexChanged += new System.EventHandler(this.checkInSSNComboBox_SelectedIndexChanged);
             // 
             // guestInfoGroupBox
             // 
@@ -412,6 +413,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Teal;
+            this.tabPage2.Controls.Add(this.tab2SSNComboBox);
             this.tabPage2.Controls.Add(this.tab2checkInDateTimeLabel);
             this.tabPage2.Controls.Add(this.tab2RoomIdLabel);
             this.tabPage2.Controls.Add(this.tab2ReservationLabel);
@@ -423,13 +425,22 @@
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.tab2SSNTextBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1361, 691);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Check-Out";
+            // 
+            // tab2SSNComboBox
+            // 
+            this.tab2SSNComboBox.FormattingEnabled = true;
+            this.tab2SSNComboBox.Location = new System.Drawing.Point(146, 75);
+            this.tab2SSNComboBox.Name = "tab2SSNComboBox";
+            this.tab2SSNComboBox.Size = new System.Drawing.Size(209, 28);
+            this.tab2SSNComboBox.TabIndex = 27;
+            this.tab2SSNComboBox.SelectedIndexChanged += new System.EventHandler(this.tab2SSNComboBox_SelectedIndexChanged);
+            this.tab2SSNComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tab2SSNComboBox_KeyPress);
             // 
             // tab2checkInDateTimeLabel
             // 
@@ -559,15 +570,7 @@
             this.label1.Size = new System.Drawing.Size(56, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "SSN:";
-            // 
-            // tab2SSNTextBox
-            // 
-            this.tab2SSNTextBox.Location = new System.Drawing.Point(155, 75);
-            this.tab2SSNTextBox.Name = "tab2SSNTextBox";
-            this.tab2SSNTextBox.PlaceholderText = "Type an SSN then press Enter";
-            this.tab2SSNTextBox.Size = new System.Drawing.Size(209, 27);
-            this.tab2SSNTextBox.TabIndex = 5;
-            this.tab2SSNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tab2SSNTextBox_KeyPress);
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // ReservationUserControl
             // 
@@ -594,7 +597,6 @@
         private Button addReservBtn;
         private ErrorProvider errorProvider1;
         private Label SSNLabel;
-        private TextBox SSNTextBox;
         private Label roomIdLabel;
         private DateTimePicker checkInDateTimePicker;
         private Label checkInLabel;
@@ -621,7 +623,6 @@
         private TabPage tabPage2;
         private DataGridView dataGridView1;
         private Label label1;
-        private TextBox tab2SSNTextBox;
         private Label label2;
         private DateTimePicker tab2checkOutDateTimePicker;
         private Label label3;
@@ -631,5 +632,7 @@
         private Label tab2checkInDateTimeLabel;
         private Label tab2RoomIdLabel;
         private Label tab2ReservationLabel;
+        private ComboBox tab2SSNComboBox;
+        private ComboBox checkInSSNComboBox;
     }
 }

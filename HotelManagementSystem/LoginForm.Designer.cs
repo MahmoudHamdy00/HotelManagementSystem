@@ -47,10 +47,9 @@
             // 
             // signInBtn
             // 
-            this.signInBtn.Location = new System.Drawing.Point(116, 280);
-            this.signInBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.signInBtn.Location = new System.Drawing.Point(133, 373);
             this.signInBtn.Name = "signInBtn";
-            this.signInBtn.Size = new System.Drawing.Size(151, 31);
+            this.signInBtn.Size = new System.Drawing.Size(173, 41);
             this.signInBtn.TabIndex = 0;
             this.signInBtn.Text = "Sign In";
             this.signInBtn.UseVisualStyleBackColor = true;
@@ -58,19 +57,17 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(100, 159);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.usernameTextBox.Location = new System.Drawing.Point(114, 212);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(260, 23);
+            this.usernameTextBox.Size = new System.Drawing.Size(297, 27);
             this.usernameTextBox.TabIndex = 1;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(100, 220);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.passwordTextBox.Location = new System.Drawing.Point(114, 293);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '♥';
-            this.passwordTextBox.Size = new System.Drawing.Size(260, 23);
+            this.passwordTextBox.Size = new System.Drawing.Size(297, 27);
             this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
@@ -79,9 +76,9 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.usernameLabel.Location = new System.Drawing.Point(10, 159);
+            this.usernameLabel.Location = new System.Drawing.Point(11, 212);
             this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(84, 19);
+            this.usernameLabel.Size = new System.Drawing.Size(104, 23);
             this.usernameLabel.TabIndex = 3;
             this.usernameLabel.Text = "Username:";
             // 
@@ -90,9 +87,9 @@
             this.passwordLabel.AutoSize = true;
             this.passwordLabel.Font = new System.Drawing.Font("Book Antiqua", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.passwordLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.passwordLabel.Location = new System.Drawing.Point(10, 220);
+            this.passwordLabel.Location = new System.Drawing.Point(11, 293);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(80, 19);
+            this.passwordLabel.Size = new System.Drawing.Size(99, 23);
             this.passwordLabel.TabIndex = 4;
             this.passwordLabel.Text = "Password:";
             // 
@@ -100,9 +97,9 @@
             // 
             this.forgetPasswordLinkLabel.AutoSize = true;
             this.forgetPasswordLinkLabel.LinkColor = System.Drawing.Color.Transparent;
-            this.forgetPasswordLinkLabel.Location = new System.Drawing.Point(173, 203);
+            this.forgetPasswordLinkLabel.Location = new System.Drawing.Point(198, 271);
             this.forgetPasswordLinkLabel.Name = "forgetPasswordLinkLabel";
-            this.forgetPasswordLinkLabel.Size = new System.Drawing.Size(94, 15);
+            this.forgetPasswordLinkLabel.Size = new System.Drawing.Size(117, 20);
             this.forgetPasswordLinkLabel.TabIndex = 5;
             this.forgetPasswordLinkLabel.TabStop = true;
             this.forgetPasswordLinkLabel.Text = "Forget Password";
@@ -122,19 +119,18 @@
             this.hotelManagmentSystemLabel.AutoSize = true;
             this.hotelManagmentSystemLabel.Font = new System.Drawing.Font("Book Antiqua", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.hotelManagmentSystemLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.hotelManagmentSystemLabel.Location = new System.Drawing.Point(21, 98);
+            this.hotelManagmentSystemLabel.Location = new System.Drawing.Point(24, 131);
             this.hotelManagmentSystemLabel.Name = "hotelManagmentSystemLabel";
-            this.hotelManagmentSystemLabel.Size = new System.Drawing.Size(339, 32);
+            this.hotelManagmentSystemLabel.Size = new System.Drawing.Size(422, 41);
             this.hotelManagmentSystemLabel.TabIndex = 6;
             this.hotelManagmentSystemLabel.Text = "Hotel Managment System";
             this.hotelManagmentSystemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // testBtn
             // 
-            this.testBtn.Location = new System.Drawing.Point(0, 326);
-            this.testBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.testBtn.Location = new System.Drawing.Point(0, 435);
             this.testBtn.Name = "testBtn";
-            this.testBtn.Size = new System.Drawing.Size(54, 31);
+            this.testBtn.Size = new System.Drawing.Size(62, 41);
             this.testBtn.TabIndex = 7;
             this.testBtn.Text = "Test";
             this.testBtn.UseVisualStyleBackColor = true;
@@ -144,19 +140,20 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::HotelManagementSystem.Properties.Resources.logoForm;
-            this.pictureBox1.Location = new System.Drawing.Point(131, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(150, 16);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(124, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(142, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(382, 356);
+            this.ClientSize = new System.Drawing.Size(437, 475);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.testBtn);
             this.Controls.Add(this.hotelManagmentSystemLabel);
@@ -167,7 +164,6 @@
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.signInBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
