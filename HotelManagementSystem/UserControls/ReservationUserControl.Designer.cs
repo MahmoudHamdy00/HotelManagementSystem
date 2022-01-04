@@ -79,12 +79,17 @@
             // 
             // addReservBtn
             // 
-            this.addReservBtn.Location = new System.Drawing.Point(248, 391);
+            this.addReservBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addReservBtn.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.addReservBtn.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addReservBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.addReservBtn.Location = new System.Drawing.Point(245, 336);
+            this.addReservBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addReservBtn.Name = "addReservBtn";
-            this.addReservBtn.Size = new System.Drawing.Size(153, 29);
+            this.addReservBtn.Size = new System.Drawing.Size(134, 41);
             this.addReservBtn.TabIndex = 2;
             this.addReservBtn.Text = "Add Reservation";
-            this.addReservBtn.UseVisualStyleBackColor = true;
+            this.addReservBtn.UseVisualStyleBackColor = false;
             this.addReservBtn.Click += new System.EventHandler(this.addReservBtn_Click);
             // 
             // errorProvider1
@@ -93,74 +98,94 @@
             // 
             // SSNTextBox
             // 
-            this.SSNTextBox.Location = new System.Drawing.Point(138, 56);
+            this.SSNTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.SSNTextBox.Location = new System.Drawing.Point(269, 113);
+            this.SSNTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SSNTextBox.Name = "SSNTextBox";
             this.SSNTextBox.PlaceholderText = "Type an SSN then press Enter";
-            this.SSNTextBox.Size = new System.Drawing.Size(209, 27);
+            this.SSNTextBox.Size = new System.Drawing.Size(183, 23);
             this.SSNTextBox.TabIndex = 3;
             this.SSNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SSNTextBox_KeyPress);
             // 
             // SSNLabel
             // 
+            this.SSNLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.SSNLabel.AutoSize = true;
-            this.SSNLabel.Location = new System.Drawing.Point(19, 56);
+            this.SSNLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SSNLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SSNLabel.Location = new System.Drawing.Point(165, 113);
             this.SSNLabel.Name = "SSNLabel";
-            this.SSNLabel.Size = new System.Drawing.Size(39, 20);
+            this.SSNLabel.Size = new System.Drawing.Size(47, 21);
             this.SSNLabel.TabIndex = 4;
             this.SSNLabel.Text = "SSN:";
             // 
             // roomIdLabel
             // 
+            this.roomIdLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomIdLabel.AutoSize = true;
-            this.roomIdLabel.Location = new System.Drawing.Point(19, 204);
+            this.roomIdLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.roomIdLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roomIdLabel.Location = new System.Drawing.Point(165, 224);
             this.roomIdLabel.Name = "roomIdLabel";
-            this.roomIdLabel.Size = new System.Drawing.Size(69, 20);
+            this.roomIdLabel.Size = new System.Drawing.Size(78, 21);
             this.roomIdLabel.TabIndex = 5;
             this.roomIdLabel.Text = "Room Id:";
             // 
             // checkInDateTimePicker
             // 
+            this.checkInDateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkInDateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkInDateTimePicker.Location = new System.Drawing.Point(138, 277);
+            this.checkInDateTimePicker.Location = new System.Drawing.Point(269, 279);
+            this.checkInDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkInDateTimePicker.MinDate = new System.DateTime(2022, 1, 3, 0, 0, 0, 0);
             this.checkInDateTimePicker.Name = "checkInDateTimePicker";
-            this.checkInDateTimePicker.Size = new System.Drawing.Size(263, 27);
+            this.checkInDateTimePicker.Size = new System.Drawing.Size(231, 23);
             this.checkInDateTimePicker.TabIndex = 7;
             // 
             // checkInLabel
             // 
+            this.checkInLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkInLabel.AutoSize = true;
-            this.checkInLabel.Location = new System.Drawing.Point(19, 277);
+            this.checkInLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkInLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkInLabel.Location = new System.Drawing.Point(165, 279);
             this.checkInLabel.Name = "checkInLabel";
-            this.checkInLabel.Size = new System.Drawing.Size(67, 20);
+            this.checkInLabel.Size = new System.Drawing.Size(81, 21);
             this.checkInLabel.TabIndex = 8;
             this.checkInLabel.Text = "Check In:";
             // 
             // roomIdComboBox
             // 
+            this.roomIdComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roomIdComboBox.FormattingEnabled = true;
-            this.roomIdComboBox.Location = new System.Drawing.Point(138, 203);
+            this.roomIdComboBox.Location = new System.Drawing.Point(269, 223);
+            this.roomIdComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roomIdComboBox.Name = "roomIdComboBox";
-            this.roomIdComboBox.Size = new System.Drawing.Size(151, 28);
+            this.roomIdComboBox.Size = new System.Drawing.Size(133, 23);
             this.roomIdComboBox.TabIndex = 11;
             // 
             // roomTypeComboBox
             // 
+            this.roomTypeComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roomTypeComboBox.FormattingEnabled = true;
-            this.roomTypeComboBox.Location = new System.Drawing.Point(138, 129);
+            this.roomTypeComboBox.Location = new System.Drawing.Point(269, 168);
+            this.roomTypeComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.roomTypeComboBox.Name = "roomTypeComboBox";
-            this.roomTypeComboBox.Size = new System.Drawing.Size(151, 28);
+            this.roomTypeComboBox.Size = new System.Drawing.Size(133, 23);
             this.roomTypeComboBox.TabIndex = 12;
             this.roomTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.roomTypeComboBox_SelectedIndexChanged);
             // 
             // roomTypeLabel
             // 
+            this.roomTypeLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.roomTypeLabel.AutoSize = true;
-            this.roomTypeLabel.Location = new System.Drawing.Point(19, 130);
+            this.roomTypeLabel.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.roomTypeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.roomTypeLabel.Location = new System.Drawing.Point(165, 169);
             this.roomTypeLabel.Name = "roomTypeLabel";
-            this.roomTypeLabel.Size = new System.Drawing.Size(84, 20);
+            this.roomTypeLabel.Size = new System.Drawing.Size(96, 21);
             this.roomTypeLabel.TabIndex = 13;
             this.roomTypeLabel.Text = "Room Type";
             this.roomTypeLabel.Click += new System.EventHandler(this.roomTypeLabel_Click);
@@ -170,20 +195,20 @@
             this.addressTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addressTextBox.Enabled = false;
             this.addressTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.addressTextBox.Location = new System.Drawing.Point(196, 149);
-            this.addressTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addressTextBox.Location = new System.Drawing.Point(172, 112);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(217, 39);
+            this.addressTextBox.Size = new System.Drawing.Size(190, 33);
             this.addressTextBox.TabIndex = 39;
             // 
             // labelAddress
             // 
             this.labelAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelAddress.AutoSize = true;
-            this.labelAddress.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelAddress.Location = new System.Drawing.Point(20, 149);
+            this.labelAddress.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAddress.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelAddress.Location = new System.Drawing.Point(17, 118);
             this.labelAddress.Name = "labelAddress";
-            this.labelAddress.Size = new System.Drawing.Size(124, 37);
+            this.labelAddress.Size = new System.Drawing.Size(92, 23);
             this.labelAddress.TabIndex = 38;
             this.labelAddress.Text = "Address :";
             // 
@@ -191,11 +216,12 @@
             // 
             this.labelGender.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelGender.AutoSize = true;
-            this.labelGender.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelGender.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelGender.Location = new System.Drawing.Point(20, 200);
+            this.labelGender.BackColor = System.Drawing.Color.Teal;
+            this.labelGender.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelGender.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelGender.Location = new System.Drawing.Point(17, 156);
             this.labelGender.Name = "labelGender";
-            this.labelGender.Size = new System.Drawing.Size(117, 37);
+            this.labelGender.Size = new System.Drawing.Size(87, 23);
             this.labelGender.TabIndex = 37;
             this.labelGender.Text = "Gender :";
             // 
@@ -209,10 +235,9 @@
             this.genderComboBox.Items.AddRange(new object[] {
             "Male ",
             "Female"});
-            this.genderComboBox.Location = new System.Drawing.Point(196, 197);
-            this.genderComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.genderComboBox.Location = new System.Drawing.Point(172, 148);
             this.genderComboBox.Name = "genderComboBox";
-            this.genderComboBox.Size = new System.Drawing.Size(217, 40);
+            this.genderComboBox.Size = new System.Drawing.Size(190, 33);
             this.genderComboBox.TabIndex = 36;
             // 
             // birthDateDateTimePicker
@@ -222,20 +247,20 @@
             this.birthDateDateTimePicker.Enabled = false;
             this.birthDateDateTimePicker.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.birthDateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.birthDateDateTimePicker.Location = new System.Drawing.Point(196, 294);
-            this.birthDateDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.birthDateDateTimePicker.Location = new System.Drawing.Point(172, 220);
             this.birthDateDateTimePicker.Name = "birthDateDateTimePicker";
-            this.birthDateDateTimePicker.Size = new System.Drawing.Size(217, 39);
+            this.birthDateDateTimePicker.Size = new System.Drawing.Size(190, 33);
             this.birthDateDateTimePicker.TabIndex = 35;
             // 
             // labelBOD
             // 
             this.labelBOD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelBOD.AutoSize = true;
-            this.labelBOD.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelBOD.Location = new System.Drawing.Point(20, 296);
+            this.labelBOD.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelBOD.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelBOD.Location = new System.Drawing.Point(17, 228);
             this.labelBOD.Name = "labelBOD";
-            this.labelBOD.Size = new System.Drawing.Size(173, 37);
+            this.labelBOD.Size = new System.Drawing.Size(134, 23);
             this.labelBOD.TabIndex = 34;
             this.labelBOD.Text = "Birth Of Day :";
             // 
@@ -244,20 +269,20 @@
             this.nationalityTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nationalityTextBox.Enabled = false;
             this.nationalityTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nationalityTextBox.Location = new System.Drawing.Point(196, 342);
-            this.nationalityTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.nationalityTextBox.Location = new System.Drawing.Point(172, 256);
             this.nationalityTextBox.Name = "nationalityTextBox";
-            this.nationalityTextBox.Size = new System.Drawing.Size(217, 39);
+            this.nationalityTextBox.Size = new System.Drawing.Size(190, 33);
             this.nationalityTextBox.TabIndex = 33;
             // 
             // labelCountry
             // 
             this.labelCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelCountry.AutoSize = true;
-            this.labelCountry.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelCountry.Location = new System.Drawing.Point(20, 345);
+            this.labelCountry.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCountry.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelCountry.Location = new System.Drawing.Point(17, 265);
             this.labelCountry.Name = "labelCountry";
-            this.labelCountry.Size = new System.Drawing.Size(175, 37);
+            this.labelCountry.Size = new System.Drawing.Size(130, 23);
             this.labelCountry.TabIndex = 32;
             this.labelCountry.Text = "Nationalatiy :";
             // 
@@ -266,20 +291,20 @@
             this.mobileNumberTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.mobileNumberTextBox.Enabled = false;
             this.mobileNumberTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.mobileNumberTextBox.Location = new System.Drawing.Point(196, 246);
-            this.mobileNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mobileNumberTextBox.Location = new System.Drawing.Point(172, 184);
             this.mobileNumberTextBox.Name = "mobileNumberTextBox";
-            this.mobileNumberTextBox.Size = new System.Drawing.Size(217, 39);
+            this.mobileNumberTextBox.Size = new System.Drawing.Size(190, 33);
             this.mobileNumberTextBox.TabIndex = 31;
             // 
             // labelPhone
             // 
             this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPhone.Location = new System.Drawing.Point(20, 248);
+            this.labelPhone.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPhone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelPhone.Location = new System.Drawing.Point(17, 192);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(105, 37);
+            this.labelPhone.Size = new System.Drawing.Size(77, 23);
             this.labelPhone.TabIndex = 30;
             this.labelPhone.Text = "Phone :";
             // 
@@ -288,20 +313,20 @@
             this.lastNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lastNameTextBox.Enabled = false;
             this.lastNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lastNameTextBox.Location = new System.Drawing.Point(196, 101);
-            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lastNameTextBox.Location = new System.Drawing.Point(172, 76);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(217, 39);
+            this.lastNameTextBox.Size = new System.Drawing.Size(190, 33);
             this.lastNameTextBox.TabIndex = 29;
             // 
             // labelLastName
             // 
             this.labelLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLastName.Location = new System.Drawing.Point(20, 101);
+            this.labelLastName.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelLastName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelLastName.Location = new System.Drawing.Point(17, 82);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(155, 37);
+            this.labelLastName.Size = new System.Drawing.Size(114, 23);
             this.labelLastName.TabIndex = 28;
             this.labelLastName.Text = "Last Name :";
             // 
@@ -310,20 +335,20 @@
             this.firstNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.firstNameTextBox.Enabled = false;
             this.firstNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.firstNameTextBox.Location = new System.Drawing.Point(196, 53);
-            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.firstNameTextBox.Location = new System.Drawing.Point(172, 40);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(217, 39);
+            this.firstNameTextBox.Size = new System.Drawing.Size(190, 33);
             this.firstNameTextBox.TabIndex = 27;
             // 
             // labelFirstName
             // 
             this.labelFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelFirstName.Location = new System.Drawing.Point(20, 53);
+            this.labelFirstName.Font = new System.Drawing.Font("Book Antiqua", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelFirstName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelFirstName.Location = new System.Drawing.Point(17, 46);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(157, 37);
+            this.labelFirstName.Size = new System.Drawing.Size(116, 23);
             this.labelFirstName.TabIndex = 26;
             this.labelFirstName.Text = "First Name :";
             // 
@@ -333,13 +358,15 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1369, 724);
+            this.tabControl1.Size = new System.Drawing.Size(1198, 543);
             this.tabControl1.TabIndex = 40;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Teal;
             this.tabPage1.Controls.Add(this.guestInfoGroupBox);
             this.tabPage1.Controls.Add(this.SSNLabel);
             this.tabPage1.Controls.Add(this.addReservBtn);
@@ -350,17 +377,17 @@
             this.tabPage1.Controls.Add(this.roomIdComboBox);
             this.tabPage1.Controls.Add(this.roomTypeComboBox);
             this.tabPage1.Controls.Add(this.roomTypeLabel);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1361, 691);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Size = new System.Drawing.Size(1190, 515);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Text = "Check-In";
             // 
             // guestInfoGroupBox
             // 
-            this.guestInfoGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guestInfoGroupBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guestInfoGroupBox.Controls.Add(this.addressTextBox);
             this.guestInfoGroupBox.Controls.Add(this.labelFirstName);
             this.guestInfoGroupBox.Controls.Add(this.firstNameTextBox);
@@ -375,15 +402,18 @@
             this.guestInfoGroupBox.Controls.Add(this.labelPhone);
             this.guestInfoGroupBox.Controls.Add(this.labelBOD);
             this.guestInfoGroupBox.Controls.Add(this.labelCountry);
-            this.guestInfoGroupBox.Location = new System.Drawing.Point(615, 23);
+            this.guestInfoGroupBox.Location = new System.Drawing.Point(627, 89);
+            this.guestInfoGroupBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guestInfoGroupBox.Name = "guestInfoGroupBox";
-            this.guestInfoGroupBox.Size = new System.Drawing.Size(434, 397);
+            this.guestInfoGroupBox.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guestInfoGroupBox.Size = new System.Drawing.Size(380, 298);
             this.guestInfoGroupBox.TabIndex = 40;
             this.guestInfoGroupBox.TabStop = false;
             this.guestInfoGroupBox.Text = "Guest Info";
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.Teal;
             this.tabPage2.Controls.Add(this.tab2checkInDateTimeLabel);
             this.tabPage2.Controls.Add(this.tab2RoomIdLabel);
             this.tabPage2.Controls.Add(this.tab2ReservationLabel);
@@ -396,18 +426,20 @@
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.tab2SSNTextBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1361, 691);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage2.Size = new System.Drawing.Size(1190, 515);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Text = "Check-Out";
             // 
             // tab2checkInDateTimeLabel
             // 
             this.tab2checkInDateTimeLabel.AutoSize = true;
-            this.tab2checkInDateTimeLabel.Location = new System.Drawing.Point(151, 257);
+            this.tab2checkInDateTimeLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tab2checkInDateTimeLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tab2checkInDateTimeLabel.Location = new System.Drawing.Point(136, 225);
             this.tab2checkInDateTimeLabel.Name = "tab2checkInDateTimeLabel";
             this.tab2checkInDateTimeLabel.Size = new System.Drawing.Size(16, 20);
             this.tab2checkInDateTimeLabel.TabIndex = 26;
@@ -416,7 +448,9 @@
             // tab2RoomIdLabel
             // 
             this.tab2RoomIdLabel.AutoSize = true;
-            this.tab2RoomIdLabel.Location = new System.Drawing.Point(151, 167);
+            this.tab2RoomIdLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tab2RoomIdLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tab2RoomIdLabel.Location = new System.Drawing.Point(136, 157);
             this.tab2RoomIdLabel.Name = "tab2RoomIdLabel";
             this.tab2RoomIdLabel.Size = new System.Drawing.Size(16, 20);
             this.tab2RoomIdLabel.TabIndex = 25;
@@ -425,7 +459,9 @@
             // tab2ReservationLabel
             // 
             this.tab2ReservationLabel.AutoSize = true;
-            this.tab2ReservationLabel.Location = new System.Drawing.Point(151, 102);
+            this.tab2ReservationLabel.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tab2ReservationLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tab2ReservationLabel.Location = new System.Drawing.Point(136, 108);
             this.tab2ReservationLabel.Name = "tab2ReservationLabel";
             this.tab2ReservationLabel.Size = new System.Drawing.Size(16, 20);
             this.tab2ReservationLabel.TabIndex = 24;
@@ -434,55 +470,68 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 102);
+            this.label5.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(14, 104);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 20);
+            this.label5.Size = new System.Drawing.Size(121, 21);
             this.label5.TabIndex = 22;
             this.label5.Text = "Reservation Id:";
             // 
             // checkOutButton
             // 
-            this.checkOutButton.Location = new System.Drawing.Point(126, 454);
+            this.checkOutButton.BackColor = System.Drawing.Color.SlateGray;
+            this.checkOutButton.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkOutButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkOutButton.Location = new System.Drawing.Point(92, 371);
+            this.checkOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkOutButton.Name = "checkOutButton";
-            this.checkOutButton.Size = new System.Drawing.Size(185, 36);
+            this.checkOutButton.Size = new System.Drawing.Size(162, 41);
             this.checkOutButton.TabIndex = 20;
             this.checkOutButton.Text = "Check Out";
-            this.checkOutButton.UseVisualStyleBackColor = true;
+            this.checkOutButton.UseVisualStyleBackColor = false;
             this.checkOutButton.Click += new System.EventHandler(this.checkOutButton_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 347);
+            this.label2.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(15, 288);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 20);
+            this.label2.Size = new System.Drawing.Size(93, 21);
             this.label2.TabIndex = 19;
             this.label2.Text = "Check Out:";
             // 
             // tab2checkOutDateTimePicker
             // 
             this.tab2checkOutDateTimePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.tab2checkOutDateTimePicker.Location = new System.Drawing.Point(126, 346);
+            this.tab2checkOutDateTimePicker.Location = new System.Drawing.Point(136, 286);
+            this.tab2checkOutDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab2checkOutDateTimePicker.MinDate = new System.DateTime(2022, 1, 3, 0, 0, 0, 0);
             this.tab2checkOutDateTimePicker.Name = "tab2checkOutDateTimePicker";
-            this.tab2checkOutDateTimePicker.Size = new System.Drawing.Size(263, 27);
+            this.tab2checkOutDateTimePicker.Size = new System.Drawing.Size(200, 23);
             this.tab2checkOutDateTimePicker.TabIndex = 18;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 167);
+            this.label3.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.Location = new System.Drawing.Point(14, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 20);
+            this.label3.Size = new System.Drawing.Size(78, 21);
             this.label3.TabIndex = 14;
             this.label3.Text = "Room Id:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 257);
+            this.label4.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.Location = new System.Drawing.Point(15, 221);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 20);
+            this.label4.Size = new System.Drawing.Size(81, 21);
             this.label4.TabIndex = 16;
             this.label4.Text = "Check In:";
             // 
@@ -491,44 +540,49 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(391, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(389, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(964, 682);
+            this.dataGridView1.Size = new System.Drawing.Size(797, 516);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 29);
+            this.label1.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(15, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 20);
+            this.label1.Size = new System.Drawing.Size(47, 21);
             this.label1.TabIndex = 6;
             this.label1.Text = "SSN:";
             // 
             // tab2SSNTextBox
             // 
-            this.tab2SSNTextBox.Location = new System.Drawing.Point(151, 26);
+            this.tab2SSNTextBox.Location = new System.Drawing.Point(136, 56);
+            this.tab2SSNTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab2SSNTextBox.Name = "tab2SSNTextBox";
             this.tab2SSNTextBox.PlaceholderText = "Type an SSN then press Enter";
-            this.tab2SSNTextBox.Size = new System.Drawing.Size(209, 27);
+            this.tab2SSNTextBox.Size = new System.Drawing.Size(183, 23);
             this.tab2SSNTextBox.TabIndex = 5;
             this.tab2SSNTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tab2SSNTextBox_KeyPress);
             // 
             // ReservationUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ReservationUserControl";
-            this.Size = new System.Drawing.Size(1369, 724);
+            this.Size = new System.Drawing.Size(1198, 543);
             this.Load += new System.EventHandler(this.ReservationUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tabControl1.ResumeLayout(false);
