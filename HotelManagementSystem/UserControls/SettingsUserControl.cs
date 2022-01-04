@@ -77,6 +77,12 @@ namespace HotelManagementSystem.UserControls
                 e.Handled = true;
         }
 
+        private void ssnUpdateDeleteTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+
 
 
 

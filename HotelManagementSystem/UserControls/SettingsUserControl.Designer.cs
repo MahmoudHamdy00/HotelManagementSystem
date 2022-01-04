@@ -458,6 +458,7 @@
             this.ssnUpdateDeleteTextBox.PlaceholderText = "Enter your SSN";
             this.ssnUpdateDeleteTextBox.Size = new System.Drawing.Size(326, 27);
             this.ssnUpdateDeleteTextBox.TabIndex = 2;
+            this.ssnUpdateDeleteTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ssnUpdateDeleteTextBox_KeyPress);
             // 
             // label8
             // 
