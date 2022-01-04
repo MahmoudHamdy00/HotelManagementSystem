@@ -20,9 +20,9 @@ namespace HotelManagementSystem.UserControls
             InitializeComponent();
         }
 
-            private void roomIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void roomIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar))
+           if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
         }
 
@@ -67,20 +67,24 @@ namespace HotelManagementSystem.UserControls
 
         private void SSNTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar != (char)Keys.Enter) return;
-            Guest guset = HotelDbContext.getGuestInfo(SSNTextBox.Text);
-            if (guset == null)
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                Helpper.showError("There isn't exist any guest with this SSN", "Guest Not Found");
-                return;
+                Guest guset = HotelDbContext.getGuestInfo(SSNTextBox.Text);
+                if (guset == null)
+                {
+                    Helpper.showError("There isn't exist any guest with this SSN", "Guest Not Found");
+                    return;
+                }
+                firstNameTextBox.Text = guset.firstName;
+                lastNameTextBox.Text = guset.lastName;
+                addressTextBox.Text = guset.address;
+                genderComboBox.Text = guset.gender;
+                mobileNumberTextBox.Text = guset.mobileNumber;
+                birthDateDateTimePicker.Value = guset.birthOfDate;
+                nationalityTextBox.Text = guset.nationality;
             }
-            firstNameTextBox.Text = guset.firstName;
-            lastNameTextBox.Text = guset.lastName;
-            addressTextBox.Text = guset.address;
-            genderComboBox.Text = guset.gender;
-            mobileNumberTextBox.Text = guset.mobileNumber;
-            birthDateDateTimePicker.Value = guset.birthOfDate;
-            nationalityTextBox.Text = guset.nationality;
+            else if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
 
         }
         private void clearTab1()
@@ -134,7 +138,7 @@ namespace HotelManagementSystem.UserControls
             }
             if (isOk)
             {
-                HotelDbContext.checkoutReservation(tab2SSNTextBox.Text, tab2ReservationLabel.Text,Convert.ToDateTime(tab2checkInDateTimeLabel.Text), tab2checkOutDateTimePicker.Value,tab2RoomIdLabel.Text);
+                HotelDbContext.checkoutReservation(tab2SSNTextBox.Text, tab2ReservationLabel.Text, Convert.ToDateTime(tab2checkInDateTimeLabel.Text), tab2checkOutDateTimePicker.Value, tab2RoomIdLabel.Text);
             }
             tab2SSNTextBox_KeyPress(tab2SSNTextBox, new KeyPressEventArgs((char)Keys.Enter));
         }
