@@ -231,6 +231,7 @@
             // 
             // userTypeComboBox
             // 
+            this.userTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.userTypeComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.userTypeComboBox.FormattingEnabled = true;
             this.userTypeComboBox.Items.AddRange(new object[] {
@@ -351,6 +352,7 @@
             // 
             // genderComboBox
             // 
+            this.genderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genderComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.genderComboBox.FormattingEnabled = true;
             this.genderComboBox.Items.AddRange(new object[] {
@@ -402,6 +404,7 @@
             this.mobileNumberTextBox.PlaceholderText = "Enter your phone number";
             this.mobileNumberTextBox.Size = new System.Drawing.Size(244, 23);
             this.mobileNumberTextBox.TabIndex = 18;
+            this.mobileNumberTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.mobileNumberTextBox_KeyPress);
             // 
             // ssnTextBox
             // 
@@ -412,6 +415,7 @@
             this.ssnTextBox.PlaceholderText = "Enter your SSN";
             this.ssnTextBox.Size = new System.Drawing.Size(244, 23);
             this.ssnTextBox.TabIndex = 17;
+            this.ssnTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ssnTextBox_KeyPress);
             // 
             // tabPage2
             // 

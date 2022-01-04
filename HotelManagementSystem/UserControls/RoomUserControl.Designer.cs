@@ -158,6 +158,7 @@
             this.roomIdTextBox.Name = "roomIdTextBox";
             this.roomIdTextBox.Size = new System.Drawing.Size(451, 33);
             this.roomIdTextBox.TabIndex = 23;
+            this.roomIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomIdTextBox_KeyPress);
             // 
             // roomIdSearchBtn
             // 
@@ -214,6 +215,7 @@
             this.clearFieldRoomsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.clearFieldRoomsBtn.BackColor = System.Drawing.Color.DarkGray;
             this.clearFieldRoomsBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+
             this.clearFieldRoomsBtn.Location = new System.Drawing.Point(88, 286);
             this.clearFieldRoomsBtn.Name = "clearFieldRoomsBtn";
             this.clearFieldRoomsBtn.Size = new System.Drawing.Size(210, 41);
@@ -400,6 +402,7 @@
             this.roomPriceTextBox.Name = "roomPriceTextBox";
             this.roomPriceTextBox.Size = new System.Drawing.Size(208, 33);
             this.roomPriceTextBox.TabIndex = 26;
+            this.roomPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomPriceTextBox_KeyPress);
             // 
             // label6
             // 

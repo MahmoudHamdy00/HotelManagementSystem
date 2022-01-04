@@ -113,5 +113,17 @@ namespace HotelManagementSystem.UserControls
             roomIdLabel.Visible = roomIdKeyLabel.Visible = false;
             errorProvider1.Clear();
         }
+
+        private void roomIdTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+
+        private void roomPriceTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
     }
 }
