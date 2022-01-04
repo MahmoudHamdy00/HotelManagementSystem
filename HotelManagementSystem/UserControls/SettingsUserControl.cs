@@ -34,11 +34,10 @@ namespace HotelManagementSystem.UserControls
         private void updateGridView()
         {
             HotelDbContext.showAllUsers(dataGridView1);
-            HotelDbContext.showAllUsers(dataGridView2);
         }
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-            HotelDbContext.deleteUser(ssnToDeleteTextBox, errorProvider1);
+            HotelDbContext.deleteUser(ssnUpdateDeleteTextBox, errorProvider1);
             updateGridView();
         }
 
@@ -55,15 +54,15 @@ namespace HotelManagementSystem.UserControls
             if (!LoginInfo._isAdmin)
             {
                 tabControl1.TabPages.Remove(tabPage1);
-                tabControl1.TabPages.Remove(tabPage2);
-                tabControl1.TabPages.Remove(tabPage3);
+               tabControl1.TabPages.Remove(tabPage2);
+               tabControl1.TabPages.Remove(tabPage3);
             }
-            usernameLabel.Text = usernameLabel.Text.Replace("?", LoginInfo._username);
+           usernameLabel.Text = usernameLabel.Text.Replace("?", LoginInfo._username);
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            HotelDbContext.showUserWithSSN(ssn_SearchTextBox, dataGridView2, errorProvider1);
+            HotelDbContext.showUserWithSSN(ssnUpdateDeleteTextBox, dataGridView1, errorProvider1);
         }
 
         private void ssnTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -77,6 +76,14 @@ namespace HotelManagementSystem.UserControls
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '+')
                 e.Handled = true;
         }
+
+        private void ssnUpdateDeleteTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+
+
 
 
         //     MessageBox.Show("username " + LoginInfo._username + "\n" + "password " + LoginInfo._password + "\n" + "isAdmin " + LoginInfo._isAdmin + "\n");
