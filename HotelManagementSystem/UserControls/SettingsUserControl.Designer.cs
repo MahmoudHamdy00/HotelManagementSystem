@@ -56,18 +56,12 @@
             this.mobileNumberTextBox = new System.Windows.Forms.TextBox();
             this.ssnTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchBtn = new System.Windows.Forms.Button();
             this.getUsersBtn_deleteUser = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.ssnToDeleteTextBox = new System.Windows.Forms.TextBox();
+            this.ssnUpdateDeleteTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.getUsersBtn_userDetails = new System.Windows.Forms.Button();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.ssn_SearchTextBox = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.confirmNewPasswordTextBox = new System.Windows.Forms.TextBox();
@@ -84,8 +78,6 @@
             this.groupBox2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -95,7 +87,6 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -404,10 +395,10 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Teal;
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.searchBtn);
             this.tabPage2.Controls.Add(this.getUsersBtn_deleteUser);
             this.tabPage2.Controls.Add(this.deleteBtn);
-            this.tabPage2.Controls.Add(this.ssnToDeleteTextBox);
+            this.tabPage2.Controls.Add(this.ssnUpdateDeleteTextBox);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
@@ -415,20 +406,21 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1069, 535);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Delete User";
+            this.tabPage2.Text = "Search/Delete User";
             // 
-            // button1
+            // searchBtn
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(754, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 33);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
+            this.searchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.searchBtn.BackColor = System.Drawing.Color.Gray;
+            this.searchBtn.Font = new System.Drawing.Font("Book Antiqua", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.searchBtn.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.searchBtn.Location = new System.Drawing.Point(754, 25);
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(94, 33);
+            this.searchBtn.TabIndex = 8;
+            this.searchBtn.Text = "Search";
+            this.searchBtn.UseVisualStyleBackColor = false;
+            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
             // 
             // getUsersBtn_deleteUser
             // 
@@ -458,14 +450,14 @@
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // ssnToDeleteTextBox
+            // ssnUpdateDeleteTextBox
             // 
-            this.ssnToDeleteTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ssnToDeleteTextBox.Location = new System.Drawing.Point(288, 25);
-            this.ssnToDeleteTextBox.Name = "ssnToDeleteTextBox";
-            this.ssnToDeleteTextBox.PlaceholderText = "Enter your SSN";
-            this.ssnToDeleteTextBox.Size = new System.Drawing.Size(326, 27);
-            this.ssnToDeleteTextBox.TabIndex = 2;
+            this.ssnUpdateDeleteTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnUpdateDeleteTextBox.Location = new System.Drawing.Point(288, 25);
+            this.ssnUpdateDeleteTextBox.Name = "ssnUpdateDeleteTextBox";
+            this.ssnUpdateDeleteTextBox.PlaceholderText = "Enter your SSN";
+            this.ssnUpdateDeleteTextBox.Size = new System.Drawing.Size(326, 27);
+            this.ssnUpdateDeleteTextBox.TabIndex = 2;
             // 
             // label8
             // 
@@ -481,6 +473,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -488,78 +482,11 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 73);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(1060, 459);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.getUsersBtn_userDetails);
-            this.tabPage3.Controls.Add(this.searchBtn);
-            this.tabPage3.Controls.Add(this.ssn_SearchTextBox);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1069, 535);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Users Details";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // getUsersBtn_userDetails
-            // 
-            this.getUsersBtn_userDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.getUsersBtn_userDetails.Location = new System.Drawing.Point(939, 7);
-            this.getUsersBtn_userDetails.Name = "getUsersBtn_userDetails";
-            this.getUsersBtn_userDetails.Size = new System.Drawing.Size(123, 43);
-            this.getUsersBtn_userDetails.TabIndex = 8;
-            this.getUsersBtn_userDetails.Text = "Get Users";
-            this.getUsersBtn_userDetails.UseVisualStyleBackColor = true;
-            this.getUsersBtn_userDetails.Click += new System.EventHandler(this.getUsersBtn_Click);
-            // 
-            // searchBtn
-            // 
-            this.searchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.searchBtn.Location = new System.Drawing.Point(661, 7);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(94, 29);
-            this.searchBtn.TabIndex = 7;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
-            // 
-            // ssn_SearchTextBox
-            // 
-            this.ssn_SearchTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ssn_SearchTextBox.Location = new System.Drawing.Point(328, 9);
-            this.ssn_SearchTextBox.Name = "ssn_SearchTextBox";
-            this.ssn_SearchTextBox.PlaceholderText = "Enter an SSN to search For";
-            this.ssn_SearchTextBox.Size = new System.Drawing.Size(326, 27);
-            this.ssn_SearchTextBox.TabIndex = 6;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(286, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "SSN";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 55);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(1069, 480);
-            this.dataGridView2.TabIndex = 4;
             // 
             // tabPage4
             // 
@@ -696,9 +623,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -715,7 +639,7 @@
         private TabPage tabPage3;
         private TabPage tabPage4;
         private Button deleteBtn;
-        private TextBox ssnToDeleteTextBox;
+        private TextBox ssnUpdateDeleteTextBox;
         private Label label8;
         private DataGridView dataGridView1;
         private Button searchBtn;
@@ -758,6 +682,5 @@
         private DateTimePicker birthOfDateDateTimePicker;
         private Label label16;
         private TextBox addressTextBox;
-        private Button button1;
     }
 }

@@ -170,13 +170,13 @@ namespace HotelManagementSystem.Database
             if (isNullOrEmpty(ssn.Text))
             {
                 isOk = false;
-                setError(errorProvider, ssn, "You must enter your SSn");
+                setError(errorProvider, ssn, "You must enter your SSN");
             }
             if (isOk != true) return false;
             try
             {
                 connection.Open();
-                string insertQuery = $"DELETE FROM users WHERE employees.ssn='{ssn.Text}';";
+                string insertQuery = $"DELETE FROM users WHERE users.ssn='{ssn.Text}';";
                 MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                 int ret = cmd.ExecuteNonQuery();
                 if (ret == 1)
