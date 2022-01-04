@@ -54,7 +54,7 @@ namespace HotelManagementSystem.UserControls
             checkInDateTimePicker.MinDate = DateTime.Now;
             HotelDbContext.fillRoomType(roomTypeComboBox);
             HotelDbContext.fillSSN(tab2SSNComboBox);
-            HotelDbContext.fillSSNAll(checkInSSNComboBox);
+            HotelDbContext.fillSSN(checkInSSNComboBox);
 
         }
 
@@ -162,18 +162,37 @@ namespace HotelManagementSystem.UserControls
         private void checkInSSNComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             HotelDbContext.ShowReservations(tab2SSNComboBox.Text, dataGridView1);
-            clearTab1();
-        }
 
-        private void SSNLabel_Click(object sender, EventArgs e)
-        {
-            HotelDbContext.fillSSNAll(checkInSSNComboBox);
+            Guest guset = HotelDbContext.getGuestInfo(checkInSSNComboBox.Text);
+            if (guset == null)
+            {
+                Helpper.showError("There isn't exist any guest with this SSN", "Guest Not Found");
+                return;
+            }
+            firstNameTextBox.Text = guset.firstName;
+            lastNameTextBox.Text = guset.lastName;
+            addressTextBox.Text = guset.address;
+            genderComboBox.Items.Add(guset.gender);
+            genderComboBox.Text = guset.gender;
+            mobileNumberTextBox.Text = guset.mobileNumber;
+            birthDateDateTimePicker.Value = guset.birthOfDate;
+            nationalityTextBox.Text = guset.nationality;
+            // clearTab1();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
             HotelDbContext.fillSSN(tab2SSNComboBox);
+        }
+
+        private void SSNLabel_Click(object sender, EventArgs e)
+        {
+            HotelDbContext.fillSSN(checkInSSNComboBox);
+
 
         }
     }
+
+
+
 }
