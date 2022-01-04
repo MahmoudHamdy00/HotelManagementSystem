@@ -39,6 +39,7 @@
             this.roomIdSearchBtn = new System.Windows.Forms.Button();
             this.RoomsDataGridView = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.clearFieldRoomsBtn = new System.Windows.Forms.Button();
             this.roomIdLabel = new System.Windows.Forms.Label();
             this.roomIdKeyLabel = new System.Windows.Forms.Label();
             this.roomTypeComboBox = new System.Windows.Forms.ComboBox();
@@ -61,7 +62,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.roomTypeDataGridView = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.clearFieldRoomsBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -155,6 +155,7 @@
             this.roomIdTextBox.Name = "roomIdTextBox";
             this.roomIdTextBox.Size = new System.Drawing.Size(411, 39);
             this.roomIdTextBox.TabIndex = 23;
+            this.roomIdTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomIdTextBox_KeyPress);
             // 
             // roomIdSearchBtn
             // 
@@ -204,6 +205,20 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(448, 519);
             this.panel4.TabIndex = 1;
+            // 
+            // clearFieldRoomsBtn
+            // 
+            this.clearFieldRoomsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.clearFieldRoomsBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.clearFieldRoomsBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.clearFieldRoomsBtn.Location = new System.Drawing.Point(94, 389);
+            this.clearFieldRoomsBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.clearFieldRoomsBtn.Name = "clearFieldRoomsBtn";
+            this.clearFieldRoomsBtn.Size = new System.Drawing.Size(254, 40);
+            this.clearFieldRoomsBtn.TabIndex = 29;
+            this.clearFieldRoomsBtn.Text = "Clear Fields";
+            this.clearFieldRoomsBtn.UseVisualStyleBackColor = false;
+            this.clearFieldRoomsBtn.Click += new System.EventHandler(this.clearFieldRoomsBtn_Click);
             // 
             // roomIdLabel
             // 
@@ -386,6 +401,7 @@
             this.roomPriceTextBox.Name = "roomPriceTextBox";
             this.roomPriceTextBox.Size = new System.Drawing.Size(237, 39);
             this.roomPriceTextBox.TabIndex = 26;
+            this.roomPriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.roomPriceTextBox_KeyPress);
             // 
             // label6
             // 
@@ -488,20 +504,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // clearFieldRoomsBtn
-            // 
-            this.clearFieldRoomsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.clearFieldRoomsBtn.BackColor = System.Drawing.Color.DarkGray;
-            this.clearFieldRoomsBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.clearFieldRoomsBtn.Location = new System.Drawing.Point(94, 389);
-            this.clearFieldRoomsBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.clearFieldRoomsBtn.Name = "clearFieldRoomsBtn";
-            this.clearFieldRoomsBtn.Size = new System.Drawing.Size(254, 40);
-            this.clearFieldRoomsBtn.TabIndex = 29;
-            this.clearFieldRoomsBtn.Text = "Clear Fields";
-            this.clearFieldRoomsBtn.UseVisualStyleBackColor = false;
-            this.clearFieldRoomsBtn.Click += new System.EventHandler(this.clearFieldRoomsBtn_Click);
             // 
             // RoomUserControl
             // 

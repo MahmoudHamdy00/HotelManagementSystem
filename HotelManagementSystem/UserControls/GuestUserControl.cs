@@ -109,7 +109,7 @@ namespace HotelManagementSystem
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
-        { 
+        {
             string idGuist;
             try
             {
@@ -120,7 +120,7 @@ namespace HotelManagementSystem
                     HotelDbContext.setError(errorProvider1, textBoxID, "Enter SSN");
                     Valid = false;
                 }
-                if(Valid)
+                if (Valid)
                 {
                     bool DeleteGuest = guest.removeGuest(idGuist);
                     if (DeleteGuest)
@@ -196,7 +196,7 @@ namespace HotelManagementSystem
                         clear_();
                         MessageBox.Show("NEW Guest was Edited Successfuly ", "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    else MessageBox.Show("there is't any Guest has Guest Id="+idGuist + " or duplicate Phone "+ phone, "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show("there is't any Guest has Guest Id=" + idGuist + " or duplicate Phone " + phone, "Edit Guest", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
@@ -213,7 +213,7 @@ namespace HotelManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            string idGuist=textBoxSearch.Text;
+            string idGuist = textBoxSearch.Text;
             try
             {
                 bool Valid = true;
@@ -236,7 +236,8 @@ namespace HotelManagementSystem
 
         private void textBoxID_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
             errorProvider1.Clear();
 
@@ -246,12 +247,12 @@ namespace HotelManagementSystem
         {
             if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
                 e.Handled = true;
-               errorProvider1.Clear();
+            errorProvider1.Clear();
         }
 
         private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+           if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back&&e.KeyChar!='+')
                 e.Handled = true;
             errorProvider1.Clear();
         }
@@ -271,8 +272,9 @@ namespace HotelManagementSystem
             comboBoxGender.Text = dataGridViewGuestInfo.CurrentRow.Cells[4].Value.ToString();
             textBoxPhone.Text = dataGridViewGuestInfo.CurrentRow.Cells[5].Value.ToString();
             textBoxCountry.Text = dataGridViewGuestInfo.CurrentRow.Cells[7].Value.ToString();
-            try {
-                dateTimePickerBirthDay.Value = Convert.ToDateTime(dataGridViewGuestInfo.CurrentRow.Cells[6].Value.ToString()); 
+            try
+            {
+                dateTimePickerBirthDay.Value = Convert.ToDateTime(dataGridViewGuestInfo.CurrentRow.Cells[6].Value.ToString());
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Format Date Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
@@ -285,7 +287,7 @@ namespace HotelManagementSystem
             errorProvider1.Clear();
 
             textBoxID.Text = textBoxFirstName.Text = textBoxLastName.Text = textBoxPhone.Text = textBoxCountry.Text = textBoxSearch.Text = "";
-            textBoxAddress.Text = comboBoxGender.Text =default;
+            textBoxAddress.Text = comboBoxGender.Text = default;
             dataGridViewGuestInfo.DataSource = guest.GetGuests();
         }
 
@@ -303,22 +305,22 @@ namespace HotelManagementSystem
 
         private void textBoxLastName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar)) 
-            e.Handled = true;
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar))
+                e.Handled = true;
             errorProvider1.Clear();
         }
 
         private void textBoxCountry_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar)) 
-            e.Handled = true;
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar))
+                e.Handled = true;
             errorProvider1.Clear();
         }
 
         private void textBoxAddress_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar)) 
-            e.Handled = true;
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && !char.IsLetter(e.KeyChar))
+                e.Handled = true;
             errorProvider1.Clear();
         }
 

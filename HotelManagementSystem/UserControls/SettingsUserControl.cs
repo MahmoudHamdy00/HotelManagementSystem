@@ -20,7 +20,7 @@ namespace HotelManagementSystem.UserControls
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            HotelDbContext.registerNewUser(ssnTextBox, firstNameTextBox,lastNameTextBox,addressTextBox,genderComboBox, mobileNumberTextBox,birthOfDateDateTimePicker, emailTextBox, usernameTextBox, passwordTextBox, userTypeComboBox, errorProvider1);
+            HotelDbContext.registerNewUser(ssnTextBox, firstNameTextBox, lastNameTextBox, addressTextBox, genderComboBox, mobileNumberTextBox, birthOfDateDateTimePicker, emailTextBox, usernameTextBox, passwordTextBox, userTypeComboBox, errorProvider1);
             updateGridView();
         }
 
@@ -64,6 +64,18 @@ namespace HotelManagementSystem.UserControls
         private void searchBtn_Click(object sender, EventArgs e)
         {
             HotelDbContext.showUserWithSSN(ssn_SearchTextBox, dataGridView2, errorProvider1);
+        }
+
+        private void ssnTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+                e.Handled = true;
+        }
+
+        private void mobileNumberTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '+')
+                e.Handled = true;
         }
 
 
