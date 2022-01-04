@@ -128,5 +128,10 @@ namespace HotelManagementSystem
             changeUserControl((Button)sender);
 
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            guestBtn.PerformClick();
+        }
     }
 }
