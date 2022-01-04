@@ -28,48 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridViewGuestInfo = new System.Windows.Forms.DataGridView();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
+            this.roomIdTextBox = new System.Windows.Forms.TextBox();
+            this.roomIdSearchBtn = new System.Windows.Forms.Button();
+            this.RoomsDataGridView = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.roomIdLabel = new System.Windows.Forms.Label();
+            this.roomIdKeyLabel = new System.Windows.Forms.Label();
+            this.roomTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.roomPriceLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.labelID = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
+            this.deleteRoomBtn = new System.Windows.Forms.Button();
+            this.editRoomBtn = new System.Windows.Forms.Button();
+            this.addRoomBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.clearFieldsBtn = new System.Windows.Forms.Button();
+            this.roomTypeTextBox = new System.Windows.Forms.TextBox();
+            this.roomPriceTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.roomTypeDataGridView = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.clearFieldRoomsBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuestInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomsDataGridView)).BeginInit();
             this.panel4.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomTypeDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -134,54 +137,52 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.panel3.Controls.Add(this.dataGridViewGuestInfo);
-            this.panel3.Controls.Add(this.textBoxSearch);
-            this.panel3.Controls.Add(this.buttonSearch);
+            this.panel3.Controls.Add(this.roomIdTextBox);
+            this.panel3.Controls.Add(this.roomIdSearchBtn);
+            this.panel3.Controls.Add(this.RoomsDataGridView);
             this.panel3.Location = new System.Drawing.Point(457, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(923, 519);
             this.panel3.TabIndex = 0;
             // 
-            // dataGridViewGuestInfo
+            // roomIdTextBox
             // 
-            this.dataGridViewGuestInfo.AllowUserToAddRows = false;
-            this.dataGridViewGuestInfo.AllowUserToDeleteRows = false;
-            this.dataGridViewGuestInfo.AllowUserToOrderColumns = true;
-            this.dataGridViewGuestInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.roomIdTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewGuestInfo.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridViewGuestInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGuestInfo.Location = new System.Drawing.Point(0, 81);
-            this.dataGridViewGuestInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridViewGuestInfo.Name = "dataGridViewGuestInfo";
-            this.dataGridViewGuestInfo.ReadOnly = true;
-            this.dataGridViewGuestInfo.RowHeadersWidth = 51;
-            this.dataGridViewGuestInfo.RowTemplate.Height = 25;
-            this.dataGridViewGuestInfo.Size = new System.Drawing.Size(920, 437);
-            this.dataGridViewGuestInfo.TabIndex = 21;
+            this.roomIdTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.roomIdTextBox.Location = new System.Drawing.Point(168, 15);
+            this.roomIdTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.roomIdTextBox.Name = "roomIdTextBox";
+            this.roomIdTextBox.Size = new System.Drawing.Size(411, 39);
+            this.roomIdTextBox.TabIndex = 23;
             // 
-            // textBoxSearch
+            // roomIdSearchBtn
             // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxSearch.Location = new System.Drawing.Point(273, 21);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(391, 39);
-            this.textBoxSearch.TabIndex = 20;
+            this.roomIdSearchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.roomIdSearchBtn.Location = new System.Drawing.Point(611, 11);
+            this.roomIdSearchBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.roomIdSearchBtn.Name = "roomIdSearchBtn";
+            this.roomIdSearchBtn.Size = new System.Drawing.Size(165, 43);
+            this.roomIdSearchBtn.TabIndex = 22;
+            this.roomIdSearchBtn.Text = "Search";
+            this.roomIdSearchBtn.UseVisualStyleBackColor = true;
             // 
-            // buttonSearch
+            // RoomsDataGridView
             // 
-            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSearch.Location = new System.Drawing.Point(680, 17);
-            this.buttonSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(165, 43);
-            this.buttonSearch.TabIndex = 19;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.RoomsDataGridView.AllowUserToAddRows = false;
+            this.RoomsDataGridView.AllowUserToDeleteRows = false;
+            this.RoomsDataGridView.AllowUserToOrderColumns = true;
+            this.RoomsDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.RoomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RoomsDataGridView.Location = new System.Drawing.Point(0, 62);
+            this.RoomsDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.RoomsDataGridView.Name = "RoomsDataGridView";
+            this.RoomsDataGridView.ReadOnly = true;
+            this.RoomsDataGridView.RowHeadersWidth = 51;
+            this.RoomsDataGridView.RowTemplate.Height = 25;
+            this.RoomsDataGridView.Size = new System.Drawing.Size(923, 457);
+            this.RoomsDataGridView.TabIndex = 21;
+            this.RoomsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RoomsDataGridView_CellClick);
             // 
             // panel4
             // 
@@ -189,31 +190,68 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.clearFieldRoomsBtn);
+            this.panel4.Controls.Add(this.roomIdLabel);
+            this.panel4.Controls.Add(this.roomIdKeyLabel);
+            this.panel4.Controls.Add(this.roomTypeComboBox);
+            this.panel4.Controls.Add(this.roomPriceLabel);
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.comboBoxGender);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.textBox1);
-            this.panel4.Controls.Add(this.labelID);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.buttonAdd);
+            this.panel4.Controls.Add(this.deleteRoomBtn);
+            this.panel4.Controls.Add(this.editRoomBtn);
+            this.panel4.Controls.Add(this.addRoomBtn);
             this.panel4.Location = new System.Drawing.Point(3, 6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(448, 519);
             this.panel4.TabIndex = 1;
             // 
-            // label4
+            // roomIdLabel
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(179, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(237, 40);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.roomIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.roomIdLabel.Font = new System.Drawing.Font("Book Antiqua", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.roomIdLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.roomIdLabel.Location = new System.Drawing.Point(201, 19);
+            this.roomIdLabel.Name = "roomIdLabel";
+            this.roomIdLabel.Size = new System.Drawing.Size(237, 28);
+            this.roomIdLabel.TabIndex = 28;
+            this.roomIdLabel.Visible = false;
+            // 
+            // roomIdKeyLabel
+            // 
+            this.roomIdKeyLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.roomIdKeyLabel.AutoSize = true;
+            this.roomIdKeyLabel.Font = new System.Drawing.Font("Book Antiqua", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.roomIdKeyLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.roomIdKeyLabel.Location = new System.Drawing.Point(16, 19);
+            this.roomIdKeyLabel.Name = "roomIdKeyLabel";
+            this.roomIdKeyLabel.Size = new System.Drawing.Size(133, 32);
+            this.roomIdKeyLabel.TabIndex = 27;
+            this.roomIdKeyLabel.Text = "Room Id:";
+            this.roomIdKeyLabel.Visible = false;
+            // 
+            // roomTypeComboBox
+            // 
+            this.roomTypeComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.roomTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.roomTypeComboBox.FormattingEnabled = true;
+            this.roomTypeComboBox.ItemHeight = 20;
+            this.roomTypeComboBox.Location = new System.Drawing.Point(201, 87);
+            this.roomTypeComboBox.Name = "roomTypeComboBox";
+            this.roomTypeComboBox.Size = new System.Drawing.Size(237, 28);
+            this.roomTypeComboBox.TabIndex = 26;
+            this.roomTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.roomTypeComboBox_SelectedIndexChanged);
+            // 
+            // roomPriceLabel
+            // 
+            this.roomPriceLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.roomPriceLabel.BackColor = System.Drawing.Color.White;
+            this.roomPriceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.roomPriceLabel.Location = new System.Drawing.Point(201, 147);
+            this.roomPriceLabel.Name = "roomPriceLabel";
+            this.roomPriceLabel.Size = new System.Drawing.Size(237, 40);
+            this.roomPriceLabel.TabIndex = 25;
+            this.roomPriceLabel.Text = "0";
+            this.roomPriceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
@@ -227,22 +265,6 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "RoomPrice:";
             // 
-            // comboBoxGender
-            // 
-            this.comboBoxGender.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxGender.BackColor = System.Drawing.Color.White;
-            this.comboBoxGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGender.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBoxGender.FormattingEnabled = true;
-            this.comboBoxGender.Items.AddRange(new object[] {
-            "Single",
-            "Double"});
-            this.comboBoxGender.Location = new System.Drawing.Point(179, 77);
-            this.comboBoxGender.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(237, 40);
-            this.comboBoxGender.TabIndex = 23;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -255,70 +277,49 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "RoomType:";
             // 
-            // textBox1
+            // deleteRoomBtn
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(179, 12);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 39);
-            this.textBox1.TabIndex = 21;
+            this.deleteRoomBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.deleteRoomBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.deleteRoomBtn.FlatAppearance.BorderSize = 5;
+            this.deleteRoomBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.deleteRoomBtn.Location = new System.Drawing.Point(290, 305);
+            this.deleteRoomBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteRoomBtn.Name = "deleteRoomBtn";
+            this.deleteRoomBtn.Size = new System.Drawing.Size(126, 55);
+            this.deleteRoomBtn.TabIndex = 18;
+            this.deleteRoomBtn.Text = "Delete";
+            this.deleteRoomBtn.UseVisualStyleBackColor = false;
+            this.deleteRoomBtn.Click += new System.EventHandler(this.deleteRoomBtn_Click);
             // 
-            // labelID
+            // editRoomBtn
             // 
-            this.labelID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Book Antiqua", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelID.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelID.Location = new System.Drawing.Point(16, 16);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(126, 32);
-            this.labelID.TabIndex = 19;
-            this.labelID.Text = "RoomId:";
+            this.editRoomBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.editRoomBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.editRoomBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.editRoomBtn.Location = new System.Drawing.Point(157, 305);
+            this.editRoomBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editRoomBtn.Name = "editRoomBtn";
+            this.editRoomBtn.Size = new System.Drawing.Size(126, 55);
+            this.editRoomBtn.TabIndex = 17;
+            this.editRoomBtn.Text = "Edit";
+            this.editRoomBtn.UseVisualStyleBackColor = false;
+            this.editRoomBtn.Click += new System.EventHandler(this.editRoomBtn_Click);
             // 
-            // button2
+            // addRoomBtn
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button2.BackColor = System.Drawing.Color.DarkGray;
-            this.button2.FlatAppearance.BorderSize = 5;
-            this.button2.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(290, 305);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 55);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.BackColor = System.Drawing.Color.DarkGray;
-            this.button1.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(157, 305);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 55);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonAdd.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonAdd.FlatAppearance.BorderSize = 0;
-            this.buttonAdd.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonAdd.Location = new System.Drawing.Point(16, 305);
-            this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(126, 55);
-            this.buttonAdd.TabIndex = 16;
-            this.buttonAdd.Text = "Add";
-            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.addRoomBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addRoomBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.addRoomBtn.FlatAppearance.BorderSize = 0;
+            this.addRoomBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addRoomBtn.Location = new System.Drawing.Point(16, 305);
+            this.addRoomBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addRoomBtn.Name = "addRoomBtn";
+            this.addRoomBtn.Size = new System.Drawing.Size(126, 55);
+            this.addRoomBtn.TabIndex = 16;
+            this.addRoomBtn.Text = "Add";
+            this.addRoomBtn.UseVisualStyleBackColor = false;
+            this.addRoomBtn.Click += new System.EventHandler(this.addRoomBtn_Click);
             // 
             // tabPage2
             // 
@@ -337,28 +338,54 @@
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel5.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.clearFieldsBtn);
+            this.panel5.Controls.Add(this.roomTypeTextBox);
+            this.panel5.Controls.Add(this.roomPriceTextBox);
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Controls.Add(this.comboBox1);
             this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.button4);
-            this.panel5.Controls.Add(this.button5);
-            this.panel5.Controls.Add(this.button6);
+            this.panel5.Controls.Add(this.deleteBtn);
+            this.panel5.Controls.Add(this.editBtn);
+            this.panel5.Controls.Add(this.addBtn);
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(438, 519);
             this.panel5.TabIndex = 2;
             // 
-            // textBox3
+            // clearFieldsBtn
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(179, 139);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(237, 39);
-            this.textBox3.TabIndex = 26;
+            this.clearFieldsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.clearFieldsBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.clearFieldsBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.clearFieldsBtn.Location = new System.Drawing.Point(102, 390);
+            this.clearFieldsBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.clearFieldsBtn.Name = "clearFieldsBtn";
+            this.clearFieldsBtn.Size = new System.Drawing.Size(254, 40);
+            this.clearFieldsBtn.TabIndex = 28;
+            this.clearFieldsBtn.Text = "Clear Fields";
+            this.clearFieldsBtn.UseVisualStyleBackColor = false;
+            this.clearFieldsBtn.Click += new System.EventHandler(this.clearFieldsBtn_Click);
+            // 
+            // roomTypeTextBox
+            // 
+            this.roomTypeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.roomTypeTextBox.BackColor = System.Drawing.Color.White;
+            this.roomTypeTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.roomTypeTextBox.Location = new System.Drawing.Point(179, 81);
+            this.roomTypeTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.roomTypeTextBox.Name = "roomTypeTextBox";
+            this.roomTypeTextBox.Size = new System.Drawing.Size(237, 39);
+            this.roomTypeTextBox.TabIndex = 27;
+            // 
+            // roomPriceTextBox
+            // 
+            this.roomPriceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.roomPriceTextBox.BackColor = System.Drawing.Color.White;
+            this.roomPriceTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.roomPriceTextBox.Location = new System.Drawing.Point(179, 139);
+            this.roomPriceTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.roomPriceTextBox.Name = "roomPriceTextBox";
+            this.roomPriceTextBox.Size = new System.Drawing.Size(237, 39);
+            this.roomPriceTextBox.TabIndex = 26;
             // 
             // label6
             // 
@@ -372,22 +399,6 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "RoomPrice:";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Single",
-            "Double"});
-            this.comboBox1.Location = new System.Drawing.Point(179, 77);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(237, 40);
-            this.comboBox1.TabIndex = 23;
-            // 
             // label7
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -400,46 +411,49 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "RoomType:";
             // 
-            // button4
+            // deleteBtn
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button4.BackColor = System.Drawing.Color.DarkGray;
-            this.button4.FlatAppearance.BorderSize = 5;
-            this.button4.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.Location = new System.Drawing.Point(301, 310);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(126, 55);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = false;
+            this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.deleteBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.deleteBtn.FlatAppearance.BorderSize = 5;
+            this.deleteBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.deleteBtn.Location = new System.Drawing.Point(301, 310);
+            this.deleteBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(126, 55);
+            this.deleteBtn.TabIndex = 18;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // button5
+            // editBtn
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button5.BackColor = System.Drawing.Color.DarkGray;
-            this.button5.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(168, 310);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(126, 55);
-            this.button5.TabIndex = 17;
-            this.button5.Text = "Edit";
-            this.button5.UseVisualStyleBackColor = false;
+            this.editBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.editBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.editBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.editBtn.Location = new System.Drawing.Point(168, 310);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(126, 55);
+            this.editBtn.TabIndex = 17;
+            this.editBtn.Text = "Edit Price";
+            this.editBtn.UseVisualStyleBackColor = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
-            // button6
+            // addBtn
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button6.BackColor = System.Drawing.Color.DarkGray;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button6.Location = new System.Drawing.Point(27, 310);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(126, 55);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "Add";
-            this.button6.UseVisualStyleBackColor = false;
+            this.addBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.addBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.addBtn.FlatAppearance.BorderSize = 0;
+            this.addBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.addBtn.Location = new System.Drawing.Point(27, 310);
+            this.addBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(126, 55);
+            this.addBtn.TabIndex = 16;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // panel2
             // 
@@ -447,54 +461,47 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.roomTypeDataGridView);
             this.panel2.Location = new System.Drawing.Point(447, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(933, 519);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView1
+            // roomTypeDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 92);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(930, 427);
-            this.dataGridView1.TabIndex = 22;
+            this.roomTypeDataGridView.AllowUserToAddRows = false;
+            this.roomTypeDataGridView.AllowUserToDeleteRows = false;
+            this.roomTypeDataGridView.AllowUserToOrderColumns = true;
+            this.roomTypeDataGridView.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.roomTypeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.roomTypeDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roomTypeDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.roomTypeDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.roomTypeDataGridView.Name = "roomTypeDataGridView";
+            this.roomTypeDataGridView.ReadOnly = true;
+            this.roomTypeDataGridView.RowHeadersWidth = 51;
+            this.roomTypeDataGridView.RowTemplate.Height = 25;
+            this.roomTypeDataGridView.Size = new System.Drawing.Size(933, 519);
+            this.roomTypeDataGridView.TabIndex = 22;
+            this.roomTypeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomTypeDataGridView_CellClick);
             // 
-            // textBox2
+            // errorProvider1
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(256, 27);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(411, 39);
-            this.textBox2.TabIndex = 21;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // button3
+            // clearFieldRoomsBtn
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(699, 23);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 43);
-            this.button3.TabIndex = 19;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
+            this.clearFieldRoomsBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.clearFieldRoomsBtn.BackColor = System.Drawing.Color.DarkGray;
+            this.clearFieldRoomsBtn.Font = new System.Drawing.Font("Book Antiqua", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.clearFieldRoomsBtn.Location = new System.Drawing.Point(94, 389);
+            this.clearFieldRoomsBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.clearFieldRoomsBtn.Name = "clearFieldRoomsBtn";
+            this.clearFieldRoomsBtn.Size = new System.Drawing.Size(254, 40);
+            this.clearFieldRoomsBtn.TabIndex = 29;
+            this.clearFieldRoomsBtn.Text = "Clear Fields";
+            this.clearFieldRoomsBtn.UseVisualStyleBackColor = false;
+            this.clearFieldRoomsBtn.Click += new System.EventHandler(this.clearFieldRoomsBtn_Click);
             // 
             // RoomUserControl
             // 
@@ -505,21 +512,22 @@
             this.Controls.Add(this.panel1);
             this.Name = "RoomUserControl";
             this.Size = new System.Drawing.Size(1390, 687);
+            this.Load += new System.EventHandler(this.RoomUserControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuestInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RoomsDataGridView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomTypeDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -533,30 +541,31 @@
         private TabPage tabPage2;
         private TabPage tabPage1;
         private Panel panel3;
-        private DataGridView dataGridViewGuestInfo;
-        private TextBox textBoxSearch;
-        private Button buttonSearch;
+        private DataGridView RoomsDataGridView;
         private Panel panel4;
-        private ComboBox comboBoxGender;
         private Label label2;
-        private TextBox textBox1;
-        private Label labelID;
-        private Button button2;
-        private Button button1;
-        private Button buttonAdd;
+        private Button deleteRoomBtn;
+        private Button editRoomBtn;
+        private Button addRoomBtn;
         private Label label3;
-        private Label label4;
+        private Label roomPriceLabel;
         private Panel panel2;
-        private Button button3;
-        private TextBox textBox2;
-        private DataGridView dataGridView1;
+        private DataGridView roomTypeDataGridView;
         private Panel panel5;
         private Label label6;
-        private ComboBox comboBox1;
         private Label label7;
-        private Button button4;
-        private Button button5;
-        private Button button6;
-        private TextBox textBox3;
+        private Button deleteBtn;
+        private Button editBtn;
+        private Button addBtn;
+        private TextBox roomPriceTextBox;
+        private TextBox roomTypeTextBox;
+        private ErrorProvider errorProvider1;
+        private TextBox roomIdTextBox;
+        private Button roomIdSearchBtn;
+        private Button clearFieldsBtn;
+        private ComboBox roomTypeComboBox;
+        private Label roomIdLabel;
+        private Label roomIdKeyLabel;
+        private Button clearFieldRoomsBtn;
     }
 }

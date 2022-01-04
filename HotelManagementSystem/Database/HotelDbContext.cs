@@ -291,6 +291,7 @@ namespace HotelManagementSystem.Database
                 connection.Close();
             }
         }
+
         public static void fillRoomId(ComboBox comboBox, string roomType)
         {
             comboBox.Items.Clear();
@@ -472,11 +473,10 @@ namespace HotelManagementSystem.Database
             }
             return isOk;
         }
-
-        public static double getRoomPrice(string roomId)
+        public static string getRoomType(string roomId)
         {
 
-            double price = -1;
+            string roomType = "";
             try
             {
                 if (connection.State != ConnectionState.Open)
@@ -486,15 +486,34 @@ namespace HotelManagementSystem.Database
                 var reader = cmd.ExecuteScalar();
                 if (reader == null)
                     throw new Exception("Couldn't find room type");
-                string roomType = reader.ToString();
+                roomType = reader.ToString();
 
-                selectQuery = $"SELECT pricePerDay FROM roomtypes where roomtype='{roomType}';";
-                cmd = new MySqlCommand(selectQuery, connection);
-                reader = cmd.ExecuteScalar();
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+                // throw e;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return roomType;
+        }
+        public static double getRoomPrice(string roomType)
+        {
+
+            double price = -1;
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                    connection.Open();
+                string selectQuery = $"SELECT pricePerDay FROM roomtypes where roomtype='{roomType}';";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                var reader = cmd.ExecuteScalar();
                 if (reader == null)
                     throw new Exception("Couldn't find room price");
                 price = Convert.ToDouble(reader);
-
             }
             catch (Exception e)
             {
@@ -511,7 +530,8 @@ namespace HotelManagementSystem.Database
         {
             try
             {
-                double roomPrice = getRoomPrice(roomId);
+                string roomType = getRoomType(roomId);
+                double roomPrice = getRoomPrice(roomType);
                 double totalPrice = roomPrice * totalDays;
                 if (connection.State != ConnectionState.Open)
                     connection.Open();
@@ -528,6 +548,358 @@ namespace HotelManagementSystem.Database
             }
             finally { connection.Close(); }
 
+        }
+        public static void ShowPayments(string ssn, DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT * FROM payments where SSN='{ssn}';";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null && reader.HasRows)
+                {
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+
+                    dataGridView.DataSource = dataTable;
+                    dataGridView.Columns[0].HeaderText = "Guest SSN";
+                    dataGridView.Columns[1].HeaderText = "Reservation Id";
+                    dataGridView.Columns[2].HeaderText = "Total Price";
+
+                    // dataGridView.Columns.Remove(dataGridView.Columns[4]);
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public static void ShowRoomTypes(DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT * FROM roomtypes;";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null && reader.HasRows)
+                {
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+
+                    dataGridView.DataSource = dataTable;
+                    dataGridView.Columns[0].HeaderText = "Room Type";
+                    dataGridView.Columns[1].HeaderText = "Room Price";
+
+                    // dataGridView.Columns.Remove(dataGridView.Columns[4]);
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public static void ShowRoomIds(DataGridView dataGridView)
+        {
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT * FROM rooms;";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                if (reader != null && reader.HasRows)
+                {
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    dataGridView.DataSource = dataTable;
+                    dataGridView.Columns[0].HeaderText = "Room Id";
+                    dataGridView.Columns[1].HeaderText = "Room Type";
+                    dataGridView.Columns[2].HeaderText = "Reserved";
+                    dataGridView.Columns[3].HeaderText = "Created At";
+                    dataGridView.Columns[4].HeaderText = "Updated At";
+
+                    // dataGridView.Columns.Remove(dataGridView.Columns[4]);
+                }
+                else
+                {
+                    dataGridView.DataSource = null;
+                }
+
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+        public static bool AddRoomType(TextBox roomType, TextBox roomPrice, ErrorProvider errorProvider)
+        {
+            errorProvider.Clear();
+            bool isOk = true;
+            if (Helpper.isNullOrEmpty(roomType.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomType, "You must enter a room type.");
+            }
+            if (Helpper.isNullOrEmpty(roomPrice.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomPrice, "You must enter a room price.");
+            }
+            if (isOk != true) return false;
+            try
+            {
+                connection.Open();
+                string insertQuery = $"insert into RoomTypes values ('{roomType.Text}',{roomPrice.Text});";
+                MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    MessageBox.Show("Added Successfully");
+                }
+                else
+                    throw new Exception("Not Added");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
+        public static bool EditRoomType(TextBox roomType, TextBox roomPrice, ErrorProvider errorProvider)
+        {
+            bool isOk = true;
+            if (Helpper.isNullOrEmpty(roomType.Text))
+            {
+                Helpper.setError(errorProvider, roomType, "Please select a room from the data grid");
+                return false;
+            }
+            errorProvider.Clear();
+            if (Helpper.isNullOrEmpty(roomType.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomType, "You must select a room type(check on the grid).");
+            }
+            if (Helpper.isNullOrEmpty(roomPrice.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomPrice, "You must enter a room price.");
+            }
+            if (isOk != true) return false;
+            try
+            {
+                connection.Open();
+                string updateQuery = $"update RoomTypes set pricePerDay={roomPrice.Text} where roomType='{roomType.Text}';";
+                MySqlCommand cmd = new MySqlCommand(updateQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                    throw new Exception("Not updated");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
+        public static bool DeleteRoomType(TextBox roomType, ErrorProvider errorProvider)
+        {
+            errorProvider.Clear();
+            bool isOk = true;
+            if (Helpper.isNullOrEmpty(roomType.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomType, "You must select a room type(check on the grid).");
+            }
+            if (isOk != true) return false;
+            try
+            {
+                connection.Open();
+                string deleteQuery = $"delete from RoomTypes where roomType='{roomType.Text}';";
+                MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    MessageBox.Show("Deleted Successfully");
+                }
+                else
+                    throw new Exception("Not Deleted");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
+        public static bool getAndUpdateRoomId(Label roomIdTextBox)
+        {
+
+            try
+            {
+                connection.Open();
+                string selectQuery = $"SELECT AUTO_INCREMENT FROM information_schema.TABLES WHERE TABLE_SCHEMA = 'HotelManagmentSystemDP' AND TABLE_NAME = 'rooms';";
+                MySqlCommand cmd = new MySqlCommand(selectQuery, connection);
+                var reader = cmd.ExecuteScalar();
+                if (reader == null)
+                    throw new Exception("Couldn't get room id");
+                roomIdTextBox.Text = reader.ToString();
+                MessageBox.Show(roomIdTextBox.Text);
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
+        public static bool AddRoomId(ComboBox roomType, ErrorProvider errorProvider)
+        {
+            errorProvider.Clear();
+            bool isOk = true;
+            if (Helpper.isNullOrEmpty(roomType.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomType, "You must enter a room type.");
+            }
+            if (isOk != true) return false;
+            try
+            {
+                connection.Open();
+                string insertQuery = $"insert into rooms (roomType) values ('{roomType.Text}');";
+                MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    MessageBox.Show("Added Successfully");
+                }
+                else
+                    throw new Exception("Not Added");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
+        public static bool EditRoomId(Label roomId, ComboBox roomType, ErrorProvider errorProvider)
+        {
+            errorProvider.Clear();
+            bool isOk = true;
+            if (Helpper.isNullOrEmpty(roomId.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomId, "You must select a room(check on the grid).");
+            }
+
+            if (Helpper.isNullOrEmpty(roomType.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomType, "You must select a room type");
+            }
+
+            if (isOk != true) return false;
+            try
+            {
+                connection.Open();
+                string updateQuery = $"update rooms set roomtype='{roomType.Text}' where id='{roomId.Text}';";
+                MySqlCommand cmd = new MySqlCommand(updateQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    MessageBox.Show("Updated Successfully");
+                }
+                else
+                    throw new Exception("Not updated");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
+        }
+        public static bool DeleteRoomId(Label roomId, ErrorProvider errorProvider)
+        {
+            errorProvider.Clear();
+            bool isOk = true;
+            if (Helpper.isNullOrEmpty(roomId.Text))
+            {
+                isOk = false;
+                setError(errorProvider, roomId, "You must select a room(check on the grid).");
+            }
+            if (isOk != true) return false;
+            try
+            {
+                connection.Open();
+                string deleteQuery = $"delete from rooms where id='{roomId.Text}';";
+                MySqlCommand cmd = new MySqlCommand(deleteQuery, connection);
+                int ret = cmd.ExecuteNonQuery();
+                if (ret == 1)
+                {
+                    MessageBox.Show("Deleted Successfully");
+                }
+                else
+                    throw new Exception("Not Deleted");
+            }
+            catch (Exception e)
+            {
+                showError(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return true;
         }
     }
 
